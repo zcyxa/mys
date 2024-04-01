@@ -1,6 +1,5 @@
 import douban from './spider/video/douban.js';
 import tudou from './spider/video/tudou.js';
-import doll from './spider/video/doll.js';
 import kkys from './spider/video/kkys.js';
 import czzy from './spider/video/czzy.js';
 import ikanbot from './spider/video/ikanbot.js';
@@ -9,8 +8,33 @@ import sharenice from './spider/video/sharenice.js';
 import ktv from './spider/video/ktv.js';
 import ttkx from './spider/video/ttkx.js';
 import meijumi from './spider/video/meijumi.js';
+import doll from './spider/video/doll.js'; 
+import live from './spider/video/live.js';
+import cntv from './spider/video/cntv.js';
+import bqr from './spider/video/bqr.js';
+import _360ba from './spider/video/_360ba.js';
+import appys from './spider/video/appys.js';
+import yunpanres from './spider/video/yunpanres.js';
+import pansearch from './spider/video/pansearch.js';
+import upyun from './spider/video/upyun.js';
+import push from './spider/video/push.js';
+import alist from './spider/pan/alist.js';
+import _13bqg from './spider/book/13bqg.js';
+import wenku from './spider/book/wenku.js';
+import bookan from './spider/book/bookan.js';
+import bengou from './spider/book/bengou.js';
+import laobaigs from './spider/book/laobaigs.js';
+import coco from './spider/book/coco.js';
+import hm from './spider/book/韩漫基地.js';
+import mhdq from './spider/book/mhdq.js';
+import tewx from './spider/book/tewx.js';
+import copymanga from './spider/book/copymanga.js';
+import baozimh from './spider/book/baozimh.js';
+import vcm3u8 from './spider/video/vcm3u8.js';
+import avm3u8 from './spider/video/avm3u8.js';
+import maiyoux from './spider/video/maiyoux_node.js';
 
-const spiders = [douban,kkys,czzy,subaibai,ttkx,sharenice,tudou,ikanbot,meijumi,ktv,doll];
+const spiders = [douban,tudou,kkys,czzy,ikanbot,subaibai,sharenice,ktv,ttkx,meijumi,doll];
 const spiderPrefix = '/spider';
 
 /**
