@@ -12,11 +12,20 @@ export default {
         token: '6a17a19452f04cc5ab351151f2bdcfdc',
         token280: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyNTA0ZWIxNWNmYjE0NWFkYmJjZGJiYzI0YmFiYWRlYyIsImF1ZCI6IjczZTYxMTgzMWE3YzRkODdhYzQ5Yzg0ODFiZjlmMmM0IiwiZXhwIjoxNzE3NTE0MTE1LCJpYXQiOjE3MDk3MzgxMTUsImp0aSI6ImIwNGU4ZTM4MGFiYTQyYTM5OTgxOGNkNDI1MzM1MzlhIn0.cznFb9HbZn_1CYEvoe9aSwkYFlyUngTuy5SB-4tNHKAADjhIVYu4-gSsKuPIY7rnpmcjbwdirkP5LlGB3ftxVw',
     },
+    czzy: {
+        url: 'https://cz01.vip'
+    },
     tudou: {
         url: 'https://tudou.lvdoui.top/',
     },
     ikanbot: {
         url: "https://www.aikanbot.com"
+    },
+    ttkx: {
+        url: "http://www.kxys.site:3328"
+    },
+    quark: {
+        cookie: '_UP_A4A_11_=wb9061d5549a416aae65fa7fe5256e14; cna=0Kh0GzWzSjoCASrvPXVoDeCs; isg=BEZGLfWmX_lizQsdjqpsTJ0IlzzIp4ph-5Uo1zBvfWlEM-ZNmDUEcSzCDy9am4J5; _UP_F7E_8D_=0z44HdIBxZYiRqPMj%2FZ1g4e2tNIi%2FpwZKNd9fxNMQOzIiMzkZQhRBzb%2BZL%2B%2BO5S0fafUsIjVkYhLHpvA%2Fhicy1HUTu2LBlCPom4qTWeMFqCgN55FQx3lIyu%2B1OsWIKjG1w4pOGWcZjvuo4m2jHof9eRj66wpeTPO4r7NBD%2F4wEE0IpjIBHWretgcndtvmRjON1%2F4YBxAXEcKzEB7sy%2FnvOHZ47Hvtvq2wLtchZ7GH2KZHru1xRmXkitDMrXGp4Mq96p4CY6W9u6Jhb7b0BdOueNucrWuSJCv%2BT0a2R2jNTzdldBvB7trVMH3IhYSoUw2AYTF7eNiF%2BU9DgASvb4Vfvosp%2BEFl7vny0TNscSZMOl8DcfixlwkYTpwSCY4564fHGA9cyxKste3pBRULSTR8JY7n3P6zUYaG%2BofGCzsMul3NGY6wl6lBISYJ2cSDS100Hjqhb3FcWuLwSSSdvGDxA%3D%3D; _UP_D_=pc; __pus=1ad4605eb1fe0e1508039d89ae4d1cc7AASoe/lxbpyoqTjeWOnw06Gy+QQbSQWrQgjTwtbTp9YZA/gVheawxhDsjLIHgxJZevEOvVat/wfWYGB0cPcJEP8k; __kp=97c7d430-dd28-11ee-8159-8f948d802f39; __kps=AATBFybICrgIJhbvxr6ZGRqA; __ktd=Jedm5mxXUyichne07SX1XA==; __uid=AATBFybICrgIJhbvxr6ZGRqA; __puus=c1208ffb078de5f93208b5d9bbab3597AATTVe6ew6yLQGi0xGsKPNIdKj6l2HmbHun7oCGfBGfX8lrbT9H8gKqQd7mLqcdOqVeshk/HZnPY2vFJtSn4OtoJ7FbKSf9UsSGYEiHc+W22G63Q06yKczUStgGbMxuumCivlvGztJrQ+ZBlYEDD7f7dbNiZx74PpAOSX3Um4z+x8Gl9qUd/qN1dhPZKMIgCZKdwK1uD9Hvw966UtTrUfFaN'
     },
     alist: [
         {
