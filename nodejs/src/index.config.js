@@ -8,6 +8,16 @@ export default {
         url: 'https://cj.ffzyapi.com/api.php/provide/vod/',
         categories: ['国产剧', '香港剧', '韩国剧', '欧美剧', '台湾剧', '日本剧', '海外剧', '泰国剧', '短剧', '动作片', '喜剧片', '爱情片', '科幻片', '恐怖片', '剧情片', '战争片', '动漫片', '大陆综艺', '港台综艺', '日韩综艺', '欧美综艺', '国产动漫', '日韩动漫', '欧美动漫', '港台动漫', '海外动漫', '记录片'],
     },
+    ali: {
+        token: '6a17a19452f04cc5ab351151f2bdcfdc',
+        token280: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyNTA0ZWIxNWNmYjE0NWFkYmJjZGJiYzI0YmFiYWRlYyIsImF1ZCI6IjczZTYxMTgzMWE3YzRkODdhYzQ5Yzg0ODFiZjlmMmM0IiwiZXhwIjoxNzE3NTE0MTE1LCJpYXQiOjE3MDk3MzgxMTUsImp0aSI6ImIwNGU4ZTM4MGFiYTQyYTM5OTgxOGNkNDI1MzM1MzlhIn0.cznFb9HbZn_1CYEvoe9aSwkYFlyUngTuy5SB-4tNHKAADjhIVYu4-gSsKuPIY7rnpmcjbwdirkP5LlGB3ftxVw',
+    },
+    tudou: {
+        url: 'https://tudou.lvdoui.top/',
+    },
+    ikanbot: {
+        url: "https://www.aikanbot.com"
+    },
     alist: [
         {
             name: '🐉神族九帝',

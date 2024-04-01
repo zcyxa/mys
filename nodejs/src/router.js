@@ -2,8 +2,15 @@ import douban from './spider/video/douban.js';
 import tudou from './spider/video/tudou.js';
 import doll from './spider/video/doll.js';
 import kkys from './spider/video/kkys.js';
+import czzy from './spider/video/czzy.js';
+import ikanbot from './spider/video/ikanbot.js';
+import subaibai from './spider/video/subaibai.js';
+import sharenice from './spider/video/sharenice.js';
+import ktv from './spider/video/ktv.js';
+import ttkx from './spider/video/ttkx.js';
+import meijumi from './spider/video/meijumi.js';
 
-const spiders = [douban,kkys,tudou,doll];
+const spiders = [douban,kkys,czzy,subaibai,ttkx,sharenice,tudou,ikanbot,meijumi,ktv,doll];
 const spiderPrefix = '/spider';
 
 /**
