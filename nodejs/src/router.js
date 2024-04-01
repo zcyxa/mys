@@ -1,7 +1,9 @@
 import douban from './spider/video/douban.js';
+import tudou from './spider/video/tudou.js';
 import doll from './spider/video/doll.js';
+import kkys from './spider/video/kkys.js';
 
-const spiders = [douban,doll];
+const spiders = [douban,kkys,tudou,doll];
 const spiderPrefix = '/spider';
 
 /**
