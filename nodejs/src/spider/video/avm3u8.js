@@ -399,7 +399,7 @@ async function test(inReq, outResp) {
 export default {
     meta: {
         key: 'avm3u8',
-        name: 'AV集合',
+        name: '🔞 AV集合',
         type: 3,
     },
     api: async (fastify) => {

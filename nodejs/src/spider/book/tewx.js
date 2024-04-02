@@ -204,7 +204,7 @@ async function test(inReq, outResp) {
 export default {
     meta: {
         key: 'tewx',
-        name: '18文学',
+        name: '🔞 18文学',
         type: 10,
     },
     api: async (fastify) => {

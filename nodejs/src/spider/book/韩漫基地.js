@@ -190,7 +190,7 @@ async function test(inReq, outResp) {
 export default {
     meta: {
         key: 'hm',
-        name: '韩漫基地',
+        name: '🔞 韩漫基地',
         type: 20,
     },
     api: async (fastify) => {

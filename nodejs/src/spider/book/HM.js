@@ -1,31 +1,36 @@
 import req from '../../util/req.js';
-import { MOBILE_UA } from '../../util/misc.js';
-import { load } from 'cheerio';
+import {MOBILE_UA} from '../../util/misc.js';
+import {load} from 'cheerio';
+import pkg from 'lodash';
 
-let url = 'https://www.18hanman.com';
+const {_} = pkg;
+import CryptoJS from 'crypto-js';
+
+let url = 'https://bad.news';
+
 
 async function request(reqUrl) {
     let resp = await req.get(reqUrl, {
         headers: {
-            'Accept-Language': 'zh-CN,zh;q=0.8',
+            'Accept-Language': 'zh,en-GB;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6',
             'User-Agent': MOBILE_UA,
-        },
+        }
     });
     return resp.data;
 }
 
-async function init(_inReq, _outResp) {
+async function init(inReq, _outResp) {
     return {};
 }
 
-async function home(_inReq, _outResp) {
-    var html = await request(url+"/category/");
+async function home(inReq, _outResp) {
+    var html = await request(url+'/dm');
     const $ = load(html);
     let classes = [];
-    for (const a of $('div.classopen ul.duzhe  a[href!="/"]')) {
+    for (const a of $('ul.nav a[href!="/dm/tags"]')) {
         classes.push({
             type_id: a.attribs.href,
-            type_name: a.children[0].data.trim()
+            type_name: a.children[0].data==undefined ? '动漫' : a.children[0].data.trim(),
         });
     }
     return {
@@ -33,89 +38,82 @@ async function home(_inReq, _outResp) {
     };
 }
 
+
 async function category(inReq, _outResp) {
-    const tid= inReq.body.id;
-    const pg =inReq.body.page;
-    let page = pg || 1;
-    if (page == 0) page = 1;
-    var html = await request(url + `${tid}/page/${pg}`);
+    const tid = inReq.body.id;
+    let pg = inReq.body.page;
+    if (pg <= 0) pg = 1;
+    const html = await request(`${url}${tid}/page-${pg}`);
     const $ = load(html);
-    let books = [];
-    for (const item of $('ul.catagory-list li')) {
-        const a = $(item).find('a:first')[0];
-        const img = $(item).find('img:first-child')[0];
-        const name = $(item).find('a:last').text();
-        books.push({
-            book_id: a.attribs.href,
-            book_name: name,
-            book_pic: img.attribs.src
+    let videos = [];
+    for (const item of $('.stui-vodlist__box')) {
+        const a = $(item).find('a')[0];
+        videos.push({
+            vod_id: a.attribs.href,
+            vod_name: a.attribs.title,
+            vod_pic: a.attribs['data-echo-background']
         });
     }
-    return {
-        page: pg,
-        pagecount: $('a:contains(下一页)').length > 0 ? pg + 1 : pg,
-        list: books,
-    };
+    const hasMore = $('a > span.mobile-hide:contains(下一页)').length > 0;
+    const pgCount = hasMore ? parseInt(pg) + 1 : parseInt(pg);
+    return JSON.stringify({
+        page: parseInt(pg),
+        pagecount: pgCount,
+        limit: 24,
+        total: 24 * pgCount,
+        list: videos,
+    });
 }
 
 async function detail(inReq, _outResp) {
-    const ids = [inReq.body.id];
-    const books = [];
-    for (const id of ids) {
-        var html = await request(url+`${id}`);
-        let $ = load(html);
-        let book = {
-            book_name: $('div.title:first').text().trim(),
-            book_director: $('div.info p:nth-child(3)').text().trim(),
-            book_content: '由不知道为您呈现',
-        };
-        let urls = [];
-        const links = $('ul.list a[href!="/"]');
-        for (const l of links) {
-            var name = l.children[0].data;
-            var link = l.attribs.href;
-            urls.push(name + '$' + link);
-        }
-        book.volumes = '全卷';
-        book.urls = urls.join('#');
-        books.push(book);
+    const id = inReq.body.id;
+    var html = await request(`${url}${id}`);
+    var $ = load(html);
+    var vod = {
+        vod_id: id,
+        vod_name: $('h1.title').text().trim(),
+        vod_type: $('.detail-content a').text(),
+        vod_content: $('p.desc').text().trim(),
     }
-    return {
-        list: books,
-    };
+    let playFroms = [];
+    let playUrls = [];
+    const temp = [];
+    playFroms.push('不知道倾情打造');
+    const playUrl = $('video').attr('data-source').split('?')[0];
+    temp.push(vod.vod_name+'$'+playUrl);
+    playUrls.push(temp.join('#'));
+    vod.vod_play_from = playFroms.join('$$$');
+    vod.vod_play_url = playUrls.join('$$$');
+    return JSON.stringify({
+        list: [vod],
+    });
 }
 
 async function play(inReq, _outResp) {
-    let id = inReq.body.id;
-    var html = await request(url+id);
-    let $ = load(html);
-    var content = [];
-    for (const l of $('div.chapterbox img')){
-        const img = $(l).attr('src');
-        content.push(img);
-    }
-    return {
-        content: content
-    };
+    const id = inReq.body.id;
+    return JSON.stringify({
+        parse: 0,
+        url: id,
+    });
 }
+
 
 async function search(inReq, _outResp) {
     const wd = inReq.body.wd;
-    const html = await req.get(`${url}/index.php/search?key=${wd}`);
+    let html = await request(`${url}/dm/search/q-${wd}`);
     const $ = load(html);
-    let books = [];
-    for (const item of $('ul.u_list')) {
-        const a = $(item).find('a:first')[0];
-        const img = $(item).find('img:first-child')[0];
-        books.push({
-            book_id: a.attribs.href,
-            book_name: $('a.txt:first').text(),
-            book_pic: img.attribs.src
+    let videos = [];
+    for (const item of $('.stui-vodlist__box')) {
+        const a = $(item).find('a')[0];
+        videos.push({
+            vod_id: a.attribs.href,
+            vod_name: a.attribs.title,
+            vod_pic: a.attribs['data-echo-background']
         });
     }
-    return {
-        list: books,
-    };
+    return JSON.stringify({
+        list: videos,
+    });
 }
 
 async function test(inReq, outResp) {
@@ -144,15 +142,15 @@ async function test(inReq, outResp) {
             printErr(resp.json());
             if (dataResult.category.list.length > 0) {
                 resp = await inReq.server.inject().post(`${prefix}/detail`).payload({
-                    id: dataResult.category.list[0].book_id, // dataResult.category.list.map((v) => v.vod_id),
+                    id: dataResult.category.list[0].vod_id, // dataResult.category.list.map((v) => v.vod_id),
                 });
                 dataResult.detail = resp.json();
                 printErr(resp.json());
                 if (dataResult.detail.list && dataResult.detail.list.length > 0) {
                     dataResult.play = [];
-                    for (const book of dataResult.detail.list) {
-                        const flags = book.volumes.split('$$$');
-                        const ids = book.urls.split('$$$');
+                    for (const vod of dataResult.detail.list) {
+                        const flags = vod.vod_play_from.split('$$$');
+                        const ids = vod.vod_play_url.split('$$$');
                         for (let j = 0; j < flags.length; j++) {
                             const flag = flags[j];
                             const urls = ids[j].split('#');
@@ -181,15 +179,15 @@ async function test(inReq, outResp) {
     } catch (err) {
         console.error(err);
         outResp.code(500);
-        return { err: err.message, tip: 'check debug console output' };
+        return {err: err.message, tip: 'check debug console output'};
     }
 }
 
 export default {
     meta: {
-        key: 'mhdq',
-        name: '🔞 漫画大全',
-        type: 20,
+        key: 'hs',
+        name: '🔞 H漫',
+        type: 3,
     },
     api: async (fastify) => {
         fastify.post('/init', init);

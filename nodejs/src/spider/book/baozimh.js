@@ -222,7 +222,7 @@ async function test(inReq, outResp) {
 export default {
     meta: {
         key: 'baozimh',
-        name: '包子漫画',
+        name: '🟢 包子漫画',
         type: 20,
     },
     api: async (fastify) => {

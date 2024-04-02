@@ -91,20 +91,20 @@ async function home(inReq, _outResp) {
 
 */
 
-    const classes = [{'type_id':'latest','type_name':'最新'},];
+    const classes = [{'type_id':'latest','type_name':'最新'},{'type_id':'star/hongkongdoll','type_name':'玩偶姐姐'},{'type_id':'麻豆传媒映画','type_name':'麻豆传媒映画'},{'type_id':'91制片厂','type_name':'91制片厂'},{'type_id':'天美传媒','type_name':'天美传媒'},{'type_id':'69FILMS','type_name':'69FILMS'},{'type_id':'蜜桃影像传媒','type_name':'蜜桃影像传媒'},{'type_id':'皇家华人','type_name':'皇家华人'},{'type_id':'星空无限传媒','type_name':'星空无限传媒'},{'type_id':'精东影业','type_name':'精东影业'},{'type_id':'乐播传媒','type_name':'乐播传媒'},{'type_id':'成人头条','type_name':'成人头条'},{'type_id':'乌鸦传媒','type_name':'乌鸦传媒'},{'type_id':'兔子先生','type_name':'兔子先生'},{'type_id':'杏吧原创','type_name':'杏吧原创'},{'type_id':'mini传媒','type_name':'mini传媒'},{'type_id':'大象传媒','type_name':'大象传媒'},{'type_id':'开心鬼传媒','type_name':'开心鬼传媒'},{'type_id':'PsychoPorn','type_name':'PsychoPorn'},{'type_id':'糖心Vlog','type_name':'糖心Vlog'},{'type_id':'爱豆传媒','type_name':'爱豆传媒'},{'type_id':'性视界传媒','type_name':'性视界传媒'},{'type_id':'草霉视频','type_name':'草霉视频'},{'type_id':'果冻传媒','type_name':'果冻传媒'},{'type_id':'猫爪影像','type_name':'猫爪影像'},{'type_id':'萝莉社','type_name':'萝莉社'},{'type_id':'SA国际传媒','type_name':'SA国际传媒'},{'type_id':'香蕉视频','type_name':'香蕉视频'},{'type_id':'微密圈','type_name':'微密圈'},{'type_id':'葫芦影业','type_name':'葫芦影业'},{'type_id':'猛料原创','type_name':'猛料原创'},{'type_id':'天美影视','type_name':'天美影视'},{'type_id':'91茄子','type_name':'91茄子'},{'type_id':'乌托邦传媒','type_name':'乌托邦传媒'},{'type_id':'维纳斯','type_name':'维纳斯'},{'type_id':'FLICKO','type_name':'FLICKO'},{'type_id':'Pussy Hunter','type_name':'Pussy Hunter'},{'type_id':'冠希传媒','type_name':'冠希传媒'}];
     /*
     const filterObj = {
         '1':[{'key':'cateId','name':'类型','init':'1','value':[{'n':'全部','v':'1'},{'n':'动作片','v':'6'},{'n':'喜剧片','v':'7'},{'n':'爱情片','v':'8'},{'n':'科幻片','v':'9'},{'n':'恐怖片','v':'10'},{'n':'剧情片','v':'11'},{'n':'战争片','v':'12'}]},{'key':'year','name':'年代','init':'','value':[{'n':'全部','v':''},{'n':'2023','v':'2023'},{'n':'2022','v':'2022'},{'n':'2021','v':'2021'},{'n':'2020','v':'2020'},{'n':'2019','v':'2019'},{'n':'2018','v':'2018'},{'n':'2017','v':'2017'},{'n':'2016','v':'2016'},{'n':'2015','v':'2015'},{'n':'2014','v':'2014'},{'n':'2013','v':'2013'},{'n':'2012','v':'2012'},{'n':'2011','v':'2011'},{'n':'2010','v':'2010'}]},{'key':'by','name':'排序','value':[{'n':'时间','v':'time'},{'n':'人气','v':'hits'},{'n':'评分','v':'score'}]}],
         '2':[{'key':'cateId','name':'类型','init':'2','value':[{'n':'全部','v':'2'},{'n':'国产剧','v':'13'},{'n':'港台剧','v':'14'},{'n':'日韩剧','v':'15'},{'n':'欧美剧','v':'16'},{'n':'其他剧','v':'20'}]},{'key':'year','name':'年代','init':'','value':[{'n':'全部','v':''},{'n':'2023','v':'2023'},{'n':'2022','v':'2022'},{'n':'2021','v':'2021'},{'n':'2020','v':'2020'},{'n':'2019','v':'2019'},{'n':'2018','v':'2018'},{'n':'2017','v':'2017'},{'n':'2016','v':'2016'},{'n':'2015','v':'2015'},{'n':'2014','v':'2014'},{'n':'2013','v':'2013'},{'n':'2012','v':'2012'},{'n':'2011','v':'2011'},{'n':'2010','v':'2010'},{'n':'2009','v':'2009'},{'n':'2008','v':'2008'},{'n':'2007','v':'2007'},{'n':'2006','v':'2006'},{'n':'2005','v':'2005'},{'n':'2004','v':'2004'}]},{'key':'by','name':'排序','value':[{'n':'时间','v':'time'},{'n':'人气','v':'hits'},{'n':'评分','v':'score'}]}],
         '3':[{'key':'year','name':'年代','init':'','value':[{'n':'全部','v':''},{'n':'2023','v':'2023'},{'n':'2022','v':'2022'},{'n':'2021','v':'2021'},{'n':'2020','v':'2020'},{'n':'2019','v':'2019'},{'n':'2018','v':'2018'},{'n':'2017','v':'2017'},{'n':'2016','v':'2016'},{'n':'2015','v':'2015'},{'n':'2014','v':'2014'},{'n':'2013','v':'2013'},{'n':'2012','v':'2012'},{'n':'2011','v':'2011'},{'n':'2010','v':'2010'},{'n':'2009','v':'2009'},{'n':'2008','v':'2008'},{'n':'2007','v':'2007'},{'n':'2006','v':'2006'},{'n':'2005','v':'2005'},{'n':'2004','v':'2004'}]},{'key':'by','name':'排序','value':[{'n':'时间','v':'time'},{'n':'人气','v':'hits'},{'n':'评分','v':'score'}]}],
         '4':[{'key':'year','name':'年代','init':'','value':[{'n':'全部','v':''},{'n':'2023','v':'2023'},{'n':'2022','v':'2022'},{'n':'2021','v':'2021'},{'n':'2020','v':'2020'},{'n':'2019','v':'2019'},{'n':'2018','v':'2018'},{'n':'2017','v':'2017'},{'n':'2016','v':'2016'},{'n':'2015','v':'2015'},{'n':'2014','v':'2014'},{'n':'2013','v':'2013'},{'n':'2012','v':'2012'},{'n':'2011','v':'2011'},{'n':'2010','v':'2010'},{'n':'2009','v':'2009'},{'n':'2008','v':'2008'},{'n':'2007','v':'2007'},{'n':'2006','v':'2006'},{'n':'2005','v':'2005'},{'n':'2004','v':'2004'}]},{'key':'by','name':'排序','value':[{'n':'时间','v':'time'},{'n':'人气','v':'hits'},{'n':'评分','v':'score'}]}]
-    };*/
-    const filterObj = {
-        'latest':[{'key':'tag','name':'标签','init':'recommend','value':[{'n':'站长推荐','v':'recommend'},{'n':'动作','v':'action'},{'n':'喜剧','v':'comedy'},{'n':'爱情','v':'romance'},{'n':'科幻','v':'sci-fi'},{'n':'犯罪','v':'crime'},{'n':'悬疑','v':'mystery'},{'n':'恐怖','v':'horror'}]}],
     };
+    const filterObj = {
+        'latest':[{'key':'tag','name':'标签','init':'recommend','value':[{'n':'点击切换厂牌','v':'recommend'}]}],
+    };*/
     return JSON.stringify({
-        class: classes,
-        filters: filterObj,
+        class: classes
+        //filters: filterObj,
     });
 }
 
@@ -115,8 +115,8 @@ async function category(inReq, _outResp) {
     const extend = inReq.body.filters;
     if (pg <= 0) pg = 1;
 
-    const link = 'https://hongkongdollvideo.com/latest/' + pg + '.html';
-    // const link = HOST + '/column/' + (extend.cateId || tid) + '-'+ pg + '.html';
+    //const link = 'https://hongkongdollvideo.com/latest/' + pg + '.html';
+    const link = 'https://hongkongdollvideo.com/' + (extend.class || tid) + '/'+ pg + '.html';
 
     const html = await request(link);
     const $ = load(html);
@@ -134,6 +134,8 @@ async function category(inReq, _outResp) {
             vod_name: vod_name,
             vod_pic: img,
             vod_remarks: remarks,
+			land: 1,
+			ratio: 1.7778
         };
     });
 
@@ -251,6 +253,8 @@ async function search(inReq, _outResp) {
             vod_name: vod.name,
             vod_pic: vod.pic,
             vod_remarks: '',
+			land: 1,
+			ratio: 1.7778
         };
     });
     return JSON.stringify({
