@@ -28,7 +28,7 @@ import netflav from './spider/video/netflav.js';
 import appys from './spider/video/appys.js';
 
 
-const spiders = [douban,appys,vcm3u8,live,cntv,saohuo,tudou,kkys,czzy,ikanbot,sharenice,ktv,ttkx,meijumi,doll,netflav,avm3u8,_13bqg,bookan,bengou,laobaigs,coco,tewx,copymanga,hm,mhdq];
+const spiders = [douban,appys,vcm3u8,live,cntv,saohuo,tudou,kkys,czzy,ikanbot,sharenice,ktv,ttkx,meijumi,maiyoux,doll,netflav,avm3u8,_13bqg,bookan,bengou,laobaigs,coco,tewx,copymanga,hm,mhdq];
 const spiderPrefix = '/spider';
 
 /**

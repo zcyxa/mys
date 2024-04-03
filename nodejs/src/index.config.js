@@ -17,8 +17,8 @@ export default {
         },
     },
     ali: {
-        token: '6a17a19452f04cc5ab351151f2bdcfdc',
-        token280: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyNTA0ZWIxNWNmYjE0NWFkYmJjZGJiYzI0YmFiYWRlYyIsImF1ZCI6IjczZTYxMTgzMWE3YzRkODdhYzQ5Yzg0ODFiZjlmMmM0IiwiZXhwIjoxNzE3NTE0MTE1LCJpYXQiOjE3MDk3MzgxMTUsImp0aSI6ImIwNGU4ZTM4MGFiYTQyYTM5OTgxOGNkNDI1MzM1MzlhIn0.cznFb9HbZn_1CYEvoe9aSwkYFlyUngTuy5SB-4tNHKAADjhIVYu4-gSsKuPIY7rnpmcjbwdirkP5LlGB3ftxVw',
+        token: 'b7d1b4ce376842c3af683f210620e9c5',
+        token280: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI3N2ZkMDBiOWQ2ODI0YWM0OWY5MTgxZjUyZDU0NmRjMSIsImF1ZCI6IjczZTYxMTgzMWE3YzRkODdhYzQ5Yzg0ODFiZjlmMmM0IiwiZXhwIjoxNzE4NDQyOTg3LCJpYXQiOjE3MTA2NjY5ODcsImp0aSI6IjJkNzYzNTgwMDViYjRkNWQ4NjEwZjIxOTI2NzM3MWUwIn0.c15gB-9BYzYm_wR5M-jIJKefU3PZBrnvyEAhFVOBeEokh0R4h61Uzq1sFJf54KI5jeHbxbd0dvLSHcs30r1PxQ',
     },
     wogg: {
         url: 'https://wogg.xyz',
