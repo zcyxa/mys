@@ -25,8 +25,10 @@ import avm3u8 from './spider/video/avm3u8.js';
 import maiyoux from './spider/video/maiyoux_node.js';
 import saohuo from './spider/video/saohuo.js';
 import netflav from './spider/video/netflav.js';
+import appys from './spider/video/appys.js';
 
-const spiders = [douban,live,cntv,saohuo,tudou,kkys,czzy,ikanbot,sharenice,ktv,ttkx,meijumi,doll,netflav,_13bqg,bookan,bengou,laobaigs,coco,tewx,copymanga,hm,mhdq];
+
+const spiders = [douban,appys,vcm3u8,live,cntv,saohuo,tudou,kkys,czzy,ikanbot,sharenice,ktv,ttkx,meijumi,doll,netflav,avm3u8,_13bqg,bookan,bengou,laobaigs,coco,tewx,copymanga,hm,mhdq];
 const spiderPrefix = '/spider';
 
 /**

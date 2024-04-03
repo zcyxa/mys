@@ -104,34 +104,10 @@ export default {
             categories: ["动作片", "爱情片", "喜剧片", "科幻片", "恐怖片", "剧情片", "战争片", "动漫电影", "短剧", "大陆剧", "美剧", "港澳剧", "韩剧", "日剧", "台湾剧", "泰剧", "中国动漫", "日本动漫", "欧美动漫", "综艺", "纪录片"],
             search: true
         }],
-        lsm3u8: [{
-            name: "乐视采集",
-            url: "https://leshizyapi.com/api.php/provide/vod",
-            categories: ["动作片", "爱情片", "喜剧片", "科幻片", "恐怖片", "剧情片", "战争片", "犯罪片", "奇幻片", "灾难片", "悬疑片", "动画片", "短剧", "国产剧", "欧美剧", "香港剧", "韩国剧", "日剧", "台湾剧", "海外剧", "泰国剧", "国产动漫", "日本动漫", "欧美动漫", "海外动漫", "大陆综艺", "港台综艺", "日韩综艺", "欧美综艺", "纪录片"],
-            search: true
-        }],
-        baidu: [{
-            name: "百度采集",
-            url: "https://api.apibdzy.com/api.php/provide/vod/from/dbm3u8/",
-            categories: ["动作片", "喜剧片", "爱情片", "科幻片", "恐怖片", "剧情片", "战争片", "国产剧", "欧美剧", "韩剧", "日剧", "港剧", "台剧", "泰剧", "海外剧", "纪录片", "大陆综艺", "日韩综艺", "港台综艺", "欧美综艺", "国产动漫", "日韩动漫", "欧美动漫", "动画片", "港台动漫", "海外动漫", "悬疑片", "邵氏电影", "电影资讯", "明星资讯", "预告片"],
-            search: true
-        }],
-        hnm3u8: [{
-            name: "红牛采集",
-            url: "https://www.hongniuzy2.com/api.php/provide/vod/from/hnm3u8/",
-            categories: ["动作片", "爱情片", "喜剧片", "科幻片", "恐怖片", "剧情片", "战争片", "动漫电影", "短剧", "国产剧", "欧美剧", "港澳剧", "韩剧", "日剧", "台湾剧", "泰剧", "动漫", "综艺", "纪录片", "体育赛事"],
-            search: true
-        }],
         xlm3u8: [{
             name: "新浪采集",
             url: "https://api.xinlangapi.com/xinlangapi.php/provide/vod/from/xlm3u8/",
             categories: ["动作片", "爱情片", "喜剧片", "科幻片", "恐怖片", "剧情片", "战争片", "动漫电影", "短剧", "大陆剧", "欧美剧", "港澳剧", "韩剧", "日剧", "台湾剧", "泰剧", "动漫", "综艺", "纪录片", "体育"],
-            search: true
-        }],
-        kuaikan: [{
-            name: "快看采集",
-            url: "https://kuaikan-api.com/api.php/provide/vod/from/kuaikan/",
-            categories: ["网络电影", "惊悚片", "犯罪片", "灾难片", "悬疑片", "爱情片", "喜剧片", "奇幻片", "恐怖片", "剧情片", "战争片", "动作片", "冒险片", "动画电影", "热门短剧", "国产剧", "欧美剧", "港台剧", "韩国剧", "日本剧", "台剧", "泰剧", "国产动漫", "日本动漫", "欧美动漫", "港台动漫", "韩国动漫", "国产综艺", "日本综艺", "港台综艺", "欧美综艺", "韩国综艺", "纪录片", "电影解说"],
             search: true
         }],
         wjm3u8: [{
@@ -139,15 +115,65 @@ export default {
             url: "https://api.wujinapi.me/api.php/provide/vod/from/wjm3u8/",
             categories: ["动作片", "爱情片", "喜剧片", "科幻片", "恐怖片", "剧情片", "战争片", "悬疑片", "动画片", "犯罪片", "奇幻片", "邵氏电影", "短剧", "国产剧", "美国剧", "香港剧", "韩国剧", "日本剧", "台湾剧", "泰剧", "海外剧", "国产动漫", "日韩动漫", "欧美动漫", "大陆综艺", "日韩综艺", "港台综艺", "欧美综艺", "体育赛事", "影视解说"],
             search: true
+        }],
+        sanjiu: [{
+            name: '三九',
+            url: 'https://www.39kan.com/api.php/provide/vod/at/json',
+            search: true
+        }],
+        kuaiyu: [{
+            name: '快云',
+            url: 'https://www.kuaiyunzy.com/api.php/provide/vod/at/json',
+            search: true
+        }],
+        ikunzy: [{
+            name: '爱坤',
+            url: 'https://ikunzyapi.com/api.php/provide/vod/at/json',
+            search: true
+        }],
+        collec: [{
+            name: '卧龙',
+            url: 'https://collect.wolongzyw.com/api.php/provide/vod/at/json',
+            search: true
+        }],
+        m3u8ap: [{
+            name: '樱花',
+            url: 'https://m3u8.apiyhzy.com/api.php/provide/vod/at/json',
+            search: true
+        }],
+        apitia: [{
+            name: '天空',
+            url: 'https://api.tiankongapi.com/api.php/provide/vod/at/json',
+            search: true
+        }],
+        cjvodi: [{
+            name: '影图',
+            url: 'https://cj.vodimg.top/api.php/provide/vod/at/json',
+            search: true
+        }],
+        p2100d: [{
+            name: '飘零',
+            url: 'https://p2100.net/api.php/provide/vod/at/json',
+            search: true
+        }],
+        apizui: [{
+            name: '最大',
+            url: 'https://api.zuidapi.com/api.php/provide/vod/at/json',
+            search: true
+        }],
+        inmsdf: [{
+            name: '映迷',
+            url: 'https://www.inmi.app/api.php/provide/vod/at/json',
+            search: true
+        }],
+        wjm3u8: [{
+            name: "无尽采集",
+            url: "https://api.wujinapi.me/api.php/provide/vod/from/wjm3u8/",
+            categories: ["伦理片", "爱情片", "喜剧片", "科幻片", "恐怖片", "剧情片", "战争片", "悬疑片", "动画片", "犯罪片", "奇幻片", "邵氏电影", "短剧", "国产剧", "美国剧", "香港剧", "韩国剧", "日本剧", "台湾剧", "泰剧", "海外剧", "国产动漫", "日韩动漫", "欧美动漫", "大陆综艺", "日韩综艺", "港台综艺", "欧美综艺", "体育赛事", "影视解说"],
+            search: true
         }]
     },
     appys: {
-        jiageys: [{
-            name: '飞鸽影视',
-            url: 'http://www.jiageys.top/api.php/app/',
-            // categories: ['国产剧', '香港剧', '韩国剧', '欧美剧', '台湾剧', '日本剧', '海外剧', '泰国剧', '短剧', '动作片', '喜剧片', '爱情片', '科幻片', '恐怖片', '剧情片', '战争片', '动漫片', '大陆综艺', '港台综艺', '日韩综艺', '欧美综艺', '国产动漫', '日韩动漫', '欧美动漫', '港台动漫', '海外动漫', '记录片'],                        
-            search: true, //搜索开关 true开 false关
-        }],
         futv: [{
             name: '腐宅影视',
             url: 'http://app.zhaifutvapp.com/ruifenglb_api.php/v1.vod',
@@ -183,6 +209,147 @@ export default {
             url: 'https://www.netfly.tv/api.php/app/',
             // categories: ['国产剧', '香港剧', '韩国剧', '欧美剧', '台湾剧', '日本剧', '海外剧', '泰国剧', '短剧', '动作片', '喜剧片', '爱情片', '科幻片', '恐怖片', '剧情片', '战争片', '动漫片', '大陆综艺', '港台综艺', '日韩综艺', '欧美综艺', '国产动漫', '日韩动漫', '欧美动漫', '港台动漫', '海外动漫', '记录片'],                        
             search: true, //搜索开关 true开 false关
+        }]
+    },
+    avm3u8: {
+        md1m3u8: [{
+            name: "麻豆①",
+            url: "http://www.md91.cc/api.php/provide/vod/from/m3u8/",
+            search: true
+            }],
+
+        md3m3u8: [{
+            name: "麻豆②",
+            url: "http://86876.cc/api.php/provide/vod/from/mdm3u8/",
+            search: true
+            }],
+
+        clm3u8: [{
+            name: '草榴资源',
+            url: 'https://www.caoliuzyw.com/api.php/provide/vod/from/clm3u8',
+            search: true
+        }],
+        askm3u: [{
+            name: '奥卡资源',
+            url: 'https://aosikazy.com/api.php/provide/vod/',
+            search: true
+        }],
+        ptm3u8: [{
+            name: '葡萄资源',
+            url: 'https://caiji.putaozyw.net/inc/apijson_vod.php',
+            search: true
+        }],
+        xbm3u8: [{
+            name: '雪豹资源',
+            url: 'https://api.xbapi.cc/api.php/provide/vod/',
+            search: true
+        }],
+        sw401m: [{
+            name: '丝袜资源',
+            url: 'https://www.siwazyw.tv/api.php/provide/vod/',
+            search: true
+        }],
+        adm3u8: [{
+            name: '爱豆资源',
+            url: 'http://chujia.cc/api.php/provide/vod/from/m3u8',
+            search: true
+        }],
+        ddx1m3: [{
+            name: '滴滴资源',
+            url: 'https://api.ddapi.cc/api.php/provide/vod/',
+            search: true
+        }],
+        lym3u8: [{
+            name: '老鸭资源',
+            url: 'https://api.apilyzy.com/api.php/provide/vod/',
+            search: true
+        }],
+        mym3u8: [{
+            name: '猫源传媒',
+            url: 'https://api.maozyapi.com/inc/apijson_vod.php',
+            search: true
+        }],
+        sbm3u8: [{
+            name: '色逼资源',
+            url: 'https://apilsbzy1.com/api.php/provide/vod/at/json',
+            search: true
+        }],
+        jdm3u8: [{
+            name: '精东影业',
+            url: 'http://chujia.cc/api.php/provide/vod/from/m3u8/',
+            search: true
+        }],
+        xiaoca: [{
+            name: '小草',
+            url: 'https://www.caoliuzyw.com/api.php/provide/vod/at/json/',
+            search: true
+        }],
+        maozys: [{
+            name: '猫咪',
+            url: 'https://api.maozyapi.com/inc/apijson_vod.php',
+            search: true
+        }],
+        siwazy: [{
+            name: '袜丝',
+            url: 'https://www.siwazyw.tv/api.php/provide/vod/at/json',
+            search: true
+        }],
+
+        semaod: [{
+            name: '色猫',
+            url: 'https://caiji.semaozy.net/inc/apijson_vod.php',
+            search: true
+        }],
+        putaoz: [{
+            name: '葡萄',
+            url: 'https://caiji.putaozyw.net/inc/apijson_vod.php',
+            search: true
+        }],
+        apidda: [{
+            name: '滴滴',
+            url: 'https://api.ddapi.cc/api.php/provide/vod/at/json',
+            search: true
+        }],
+        apixba: [{
+            name: '️雪豹',
+            url: 'https://api.xbapi.cc/api.php/provide/vod/at/json',
+            search: true
+        }],
+        kkzydd: [{
+            name: '写真',
+            url: 'https://kkzy.me/api.php/provide/vod/at/json',
+            search: true
+        }],
+        tmyysd: [{
+            name: '天美',
+            url: 'https://tmyy.cc/api.php/provide/vod/from/m3u8/',
+            search: true
+        }],
+
+        apittz: [{
+            name: '天天',
+            url: 'https://apittzy.com/api.php/provide/vod/at/json',
+            search: true
+        }],
+        apilsb: [{
+            name: '色逼',
+            url: 'https://apilsbzy1.com/api.php/provide/vod/at/json',
+            search: true
+        }],
+        slapib: [{
+            name: '森林',
+            url: 'https://slapibf.com/api.php/provide/vod/at/json',
+            search: true
+        }],
+        lbapi9: [{
+            name: '乐播',
+            url: 'https://lbapi9.com/api.php/provide/vod/at/json',
+            search: true
+        }],
+        fhapi9: [{
+            name: '番号',
+            url: 'http://fhapi9.com/api.php/provide/vod/at/json',
+            search: true
         }]
     },
     alist: [

@@ -29,6 +29,44 @@ async function requestSearch(reqUrl, source) {
     }
 }
 
+//json去广告解析
+function fetchUrlFromJson(urlString) {
+const http = require('http');
+const url = require('url');
+  return new Promise((resolve, reject) => {
+    const options = {
+      hostname: 'uutb.centos.chat',
+      port: 80,
+      path: '/jsonwjm.php/?url=' + urlString,
+      method: 'GET'
+  };
+
+    const req = http.request(options, (res) => {
+      let data = '';
+
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
+
+      res.on('end', () => {
+        try {
+          const json = JSON.parse(data);
+          const url = json.url; // 假设JSON中有一个url字段
+          resolve(url);
+        } catch (e) {
+          reject(e);
+        }
+      });
+    });
+
+    req.on('error', (e) => {
+      reject(e);
+    });
+
+    req.end();
+  });
+}
+
 async function init(inReq, _outResp) {
     srcobj = inReq.server.config.vcm3u8;
     return {};
@@ -286,7 +324,7 @@ async function play(inReq, _outResp) {
     const id = inReq.body.id;
     return {
         parse: 0,
-        url: inReq.server.address().dynamic + inReq.server.prefix + '/proxy/hls/' + encodeURIComponent(id) + '/.m3u8',
+        url: await fetchUrlFromJson(id)
     };
 }
 
@@ -399,7 +437,7 @@ async function test(inReq, outResp) {
 export default {
     meta: {
         key: 'vcm3u8',
-        name: '采集整合',
+        name: '🟢 采集整合',
         type: 3,
     },
     api: async (fastify) => {
