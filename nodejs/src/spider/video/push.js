@@ -32,7 +32,7 @@ async function detail(inReq, _outResp) {
         };
     if(!regex.test(id)){
         vod.vod_play_from = '推送';
-        vod.vod_play_url = '测试$' + id;
+        vod.vod_play_url = '推送视频$' + id;
         videos.push(vod);
     }
     else{
@@ -214,10 +214,6 @@ async function play(inReq, _outResp) {
         transcoding.sort((a, b) => b.template_width - a.template_width);
         const urls = [];
         const proxyUrl = inReq.server.address().url + inReq.server.prefix + '/proxy/ali';
-        transcoding.forEach((t) => {
-            urls.push(t.template_id);
-            urls.push(`${proxyUrl}/trans/${t.template_id.toLowerCase()}/${ids[0]}/${ids[1]}/.m3u8`);
-        });
         urls.push('SRC');
         urls.push(`${proxyUrl}/src/down/${ids[0]}/${ids[1]}/.bin`);
         const result = {
@@ -229,16 +225,16 @@ async function play(inReq, _outResp) {
                 subt: `${proxyUrl}/src/subt/${ids[0]}/${ids[2]}/.bin`,
             };
         }
+        transcoding.forEach((t) => {
+            urls.push(t.template_id);
+            urls.push(`${proxyUrl}/trans/${t.template_id.toLowerCase()}/${ids[0]}/${ids[1]}/.m3u8`);
+        });
         return result;
     } else if (flag.startsWith('Quark-')) {
         const transcoding = (await Quark.getLiveTranscoding(ids[0], ids[1], ids[2], ids[3])).filter((t) => t.accessable);
         quarkTranscodingCache[ids[2]] = transcoding;
         const urls = [];
         const proxyUrl = inReq.server.address().url + inReq.server.prefix + '/proxy/quark';
-        transcoding.forEach((t) => {
-            urls.push(t.resolution.toUpperCase());
-            urls.push(`${proxyUrl}/trans/${t.resolution.toLowerCase()}/${ids[0]}/${encodeURIComponent(ids[1])}*${ids[2]}*${ids[3]}/.mp4`);
-        });
         urls.push('SRC');
         urls.push(`${proxyUrl}/src/redirect/${ids[0]}/${encodeURIComponent(ids[1])}*${ids[2]}*${ids[3]}/.bin`);
         urls.push('SRC_Proxy');
@@ -258,8 +254,38 @@ async function play(inReq, _outResp) {
                 subt: `${proxyUrl}/src/subt/${ids[0]}/${encodeURIComponent(ids[1])}*${ids[4]}*${ids[5]}/.bin`,
             };
         }
+        transcoding.forEach((t) => {
+            urls.push(t.resolution.toUpperCase());
+            urls.push(`${proxyUrl}/trans/${t.resolution.toLowerCase()}/${ids[0]}/${encodeURIComponent(ids[1])}*${ids[2]}*${ids[3]}/.mp4`);
+        });
         return result;
         }
+    else if (id.indexOf('.m3u8') < 0) {
+        const sniffer = await inReq.server.messageToDart({
+            action: 'sniff',
+            opt: {
+                url: id,
+                timeout: 10000,
+                rule: 'http((?!http).){12,}?\\.(m3u8|mp4|flv|avi|mkv|rm|wmv|mpg|m4a|mp3)(?!\\?)',
+            },
+        });
+        if (sniffer && sniffer.url) {
+            const hds = {};
+            if (sniffer.headers) {
+                if (sniffer.headers['user-agent']) {
+                    hds['User-Agent'] = sniffer.headers['user-agent'];
+                }
+                if (sniffer.headers['referer']) {
+                    hds['Referer'] = sniffer.headers['referer'];
+                }
+            }
+            return {
+                parse: 0,
+                url: sniffer.url,
+                header: hds,
+            };
+        }
+    }
     return {
         parse: 0,
         url: id,
@@ -304,7 +330,7 @@ async function test(inReq, outResp) {
 export default {
     meta: {
         key: 'push',
-        name: '推送',
+        name: '🟢 推送',
         type: 4,
     },
     api: async (fastify) => {

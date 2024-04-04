@@ -10,6 +10,8 @@ import meijumi from './spider/video/meijumi.js';
 import doll from './spider/video/doll.js'; 
 import live from './spider/video/live.js';
 import cntv from './spider/video/cntv.js';
+import yingso from './spider/video/yingso.js';
+import kunyu77 from './spider/video/kunyu77.js';
 
 import _13bqg from './spider/book/13bqg.js';
 import bookan from './spider/book/bookan.js';
@@ -26,9 +28,13 @@ import maiyoux from './spider/video/maiyoux_node.js';
 import saohuo from './spider/video/saohuo.js';
 import netflav from './spider/video/netflav.js';
 import appys from './spider/video/appys.js';
+import ng from './spider/video/ng.js';
+import pk_push from './spider/video/push.js';
 
-
-const spiders = [douban,appys,vcm3u8,live,cntv,saohuo,tudou,kkys,czzy,ikanbot,sharenice,ktv,ttkx,meijumi,maiyoux,doll,netflav,avm3u8,_13bqg,bookan,bengou,laobaigs,coco,tewx,copymanga,hm,mhdq];
+const spiders = [douban,appys,vcm3u8,live,cntv,saohuo,tudou,kkys,czzy,ikanbot,sharenice,ktv,ttkx,meijumi,yingso,ng,pk_push,maiyoux,doll,netflav,avm3u8,_13bqg,bookan,bengou,laobaigs,coco,tewx,copymanga,hm,mhdq];
+/*
+const spiders = [douban,appys,vcm3u8,live,cntv,saohuo,tudou,kkys,czzy,ikanbot,sharenice,ktv,ttkx,meijumi,yingso,_13bqg,bookan,bengou,laobaigs,coco,copymanga];
+*/
 const spiderPrefix = '/spider';
 
 /**

@@ -3,6 +3,7 @@ import { MAC_UA, formatPlayUrl } from '../../util/misc.js';
 import { load } from 'cheerio';
 import * as HLS from 'hls-parser';
 import * as Ali from '../../util/ali.js';
+import * as Quark from '../../util/quark.js';
 import dayjs from 'dayjs';
 
 let url = '';
@@ -22,13 +23,14 @@ ali: {
     token: 'xxxxxxxxxxxxxxxxxxxxxxxxx',
     token280: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
 },
-ttkx: {
-    url: 'http://www.ttkx.live:3328',
+wogg: {
+    url: 'https://wogg.xyz',
 },
 */
 async function init(inReq, _outResp) {
     url = inReq.server.config.ttkx.url;
     await Ali.initAli(inReq.server.db, inReq.server.config.ali);
+    await Quark.initQuark(inReq.server.db, inReq.server.config.quark);
     return {};
 }
 
@@ -160,14 +162,13 @@ async function category(inReq, _outResp) {
 }
 
 function conversion(bytes){
-    let mb = bytes / (1024 * 1024);
-    if (mb >= 1024) {
-      let gb = mb / 1024;
-      return `${gb.toFixed(2)}GB`;
-    } else {
-      return `${parseInt(mb)}MB`;
+  let mb = bytes / (1024 * 1024);
+  if(mb > 1024){
+    return `${(mb/1024).toFixed(2)}GB`;
+    }else{
+        return `${(mb).toFixed(2)}MB`;
     }
-  }
+}
 
 async function detail(inReq, _outResp) {
     const ids = !Array.isArray(inReq.body.id) ? [inReq.body.id] : inReq.body.id;
@@ -214,11 +215,28 @@ async function detail(inReq, _outResp) {
                         videos
                             .map((v) => {
                                 const ids = [v.share_id, v.file_id, v.subtitle ? v.subtitle.file_id : ''];
-                         const size = conversion(v.size);
-                                return formatPlayUrl('', `${v.name.replace(/.[^.]+$/,'')}  [${size}]  `) + '$' + ids.join('*');
+                                const size = conversion(v.size);
+                                return formatPlayUrl('', `[${size}]  ${v.name.replace(/.[^.]+$/,'')}`) + '$' + ids.join('*');
                             })
                             .join('#'),
                     );
+                }
+            } else {
+                const shareData = Quark.getShareData(shareUrl);
+                if (shareData) {
+                    const videos = await Quark.getFilesByShareUrl(shareData);
+                    if (videos.length > 0) {
+                        froms.push('Quark-' + shareData.shareId);
+                        urls.push(
+                            videos
+                                .map((v) => {
+                                    const ids = [shareData.shareId, v.stoken, v.fid, v.share_fid_token, v.subtitle ? v.subtitle.fid : '', v.subtitle ? v.subtitle.share_fid_token : ''];
+                                    const size = conversion(v.size);
+                                    return formatPlayUrl('', `[${size}]  ${v.file_name.replace(/.[^.]+$/,'')}`) + '$' + ids.join('*');
+                                })
+                                .join('#'),
+                        );
+                    }
                 }
             }
         }
@@ -231,110 +249,196 @@ async function detail(inReq, _outResp) {
     };
 }
 
-const transcodingCache = {};
-const downloadingCache = {};
+const aliTranscodingCache = {};
+const aliDownloadingCache = {};
+
+const quarkTranscodingCache = {};
+const quarkDownloadingCache = {};
 
 async function proxy(inReq, outResp) {
     await Ali.initAli(inReq.server.db, inReq.server.config.ali);
+    await Quark.initQuark(inReq.server.db, inReq.server.config.quark);
+    const site = inReq.params.site;
     const what = inReq.params.what;
     const shareId = inReq.params.shareId;
     const fileId = inReq.params.fileId;
-    if (what == 'trans') {
+    if (site == 'ali') {
+        if (what == 'trans') {
+            const flag = inReq.params.flag;
+            const end = inReq.params.end;
+
+            if (aliTranscodingCache[fileId]) {
+                const purl = aliTranscodingCache[fileId].filter((t) => t.template_id.toLowerCase() == flag)[0].url;
+                if (parseInt(purl.match(/x-oss-expires=(\d+)/)[1]) - dayjs().unix() < 15) {
+                    delete aliTranscodingCache[fileId];
+                }
+            }
+
+            if (aliTranscodingCache[fileId] && end.endsWith('.ts')) {
+                const transcoding = aliTranscodingCache[fileId].filter((t) => t.template_id.toLowerCase() == flag)[0];
+                if (transcoding.plist) {
+                    const tsurl = transcoding.plist.segments[parseInt(end.replace('.ts', ''))].suri;
+                    if (parseInt(tsurl.match(/x-oss-expires=(\d+)/)[1]) - dayjs().unix() < 15) {
+                        delete aliTranscodingCache[fileId];
+                    }
+                }
+            }
+
+            if (!aliTranscodingCache[fileId]) {
+                const transcoding = await Ali.getLiveTranscoding(shareId, fileId);
+                aliTranscodingCache[fileId] = transcoding;
+            }
+
+            const transcoding = aliTranscodingCache[fileId].filter((t) => t.template_id.toLowerCase() == flag)[0];
+            if (!transcoding.plist) {
+                const resp = await req.get(transcoding.url, {
+                    headers: {
+                        'User-Agent': MAC_UA,
+                    },
+                });
+                transcoding.plist = HLS.parse(resp.data);
+                for (const s of transcoding.plist.segments) {
+                    if (!s.uri.startsWith('http')) {
+                        s.uri = new URL(s.uri, transcoding.url).toString();
+                    }
+                    s.suri = s.uri;
+                    s.uri = s.mediaSequenceNumber.toString() + '.ts';
+                }
+            }
+
+            if (end.endsWith('.ts')) {
+                outResp.redirect(transcoding.plist.segments[parseInt(end.replace('.ts', ''))].suri);
+                return;
+            } else {
+                const hls = HLS.stringify(transcoding.plist);
+                let hlsHeaders = {
+                    'content-type': 'audio/x-mpegurl',
+                    'content-length': hls.length.toString(),
+                };
+                outResp.code(200).headers(hlsHeaders);
+                return hls;
+            }
+        } else {
+            const flag = inReq.params.flag;
+            if (aliDownloadingCache[fileId]) {
+                const purl = aliDownloadingCache[fileId].url;
+                if (parseInt(purl.match(/x-oss-expires=(\d+)/)[1]) - dayjs().unix() < 15) {
+                    delete aliDownloadingCache[fileId];
+                }
+            }
+            if (!aliDownloadingCache[fileId]) {
+                const down = await Ali.getDownload(shareId, fileId, flag == 'down');
+                aliDownloadingCache[fileId] = down;
+            }
+            outResp.redirect(aliDownloadingCache[fileId].url);
+            return;
+        }
+    } else if (site == 'quark') {
+        let downUrl = '';
+        const ids = fileId.split('*');
         const flag = inReq.params.flag;
-        const end = inReq.params.end;
-
-        if (transcodingCache[fileId]) {
-            const purl = transcodingCache[fileId].filter((t) => t.template_id.toLowerCase() == flag)[0].url;
-            if (parseInt(purl.match(/x-oss-expires=(\d+)/)[1]) - dayjs().unix() < 15) {
-                delete transcodingCache[fileId];
+        if (what == 'trans') {
+            if (!quarkTranscodingCache[ids[1]]) {
+                quarkTranscodingCache[ids[1]] = (await Quark.getLiveTranscoding(shareId, decodeURIComponent(ids[0]), ids[1], ids[2])).filter((t) => t.accessable);
             }
-        }
-
-        if (transcodingCache[fileId] && end.endsWith('.ts')) {
-            const transcoding = transcodingCache[fileId].filter((t) => t.template_id.toLowerCase() == flag)[0];
-            if (transcoding.plist) {
-                const tsurl = transcoding.plist.segments[parseInt(end.replace('.ts', ''))].suri;
-                if (parseInt(tsurl.match(/x-oss-expires=(\d+)/)[1]) - dayjs().unix() < 15) {
-                    delete transcodingCache[fileId];
-                }
-            }
-        }
-
-        if (!transcodingCache[fileId]) {
-            const transcoding = await Ali.getLiveTranscoding(shareId, fileId);
-            transcodingCache[fileId] = transcoding;
-        }
-
-        const transcoding = transcodingCache[fileId].filter((t) => t.template_id.toLowerCase() == flag)[0];
-        if (!transcoding.plist) {
-            const resp = await req.get(transcoding.url, {
-                headers: {
-                    'User-Agent': MAC_UA,
-                },
-            });
-            transcoding.plist = HLS.parse(resp.data);
-            for (const s of transcoding.plist.segments) {
-                if (!s.uri.startsWith('http')) {
-                    s.uri = new URL(s.uri, transcoding.url).toString();
-                }
-                s.suri = s.uri;
-                s.uri = s.mediaSequenceNumber.toString() + '.ts';
-            }
-        }
-
-        if (end.endsWith('.ts')) {
-            outResp.redirect(transcoding.plist.segments[parseInt(end.replace('.ts', ''))].suri);
+            downUrl = quarkTranscodingCache[ids[1]].filter((t) => t.resolution.toLowerCase() == flag)[0].video_info.url;
+            outResp.redirect(downUrl);
             return;
         } else {
-            const hls = HLS.stringify(transcoding.plist);
-            let hlsHeaders = {
-                'content-type': 'audio/x-mpegurl',
-                'content-length': hls.length.toString(),
-            };
-            outResp.code(200).headers(hlsHeaders);
-            return hls;
-        }
-    } else {
-        const flag = inReq.params.flag;
-        if (downloadingCache[fileId]) {
-            const purl = downloadingCache[fileId].url;
-            if (parseInt(purl.match(/x-oss-expires=(\d+)/)[1]) - dayjs().unix() < 15) {
-                delete downloadingCache[fileId];
+            if (!quarkDownloadingCache[ids[1]]) {
+                const down = await Quark.getDownload(shareId, decodeURIComponent(ids[0]), ids[1], ids[2], flag == 'down');
+                if (down) quarkDownloadingCache[ids[1]] = down;
+            }
+            downUrl = quarkDownloadingCache[ids[1]].download_url;
+            if (flag == 'redirect') {
+                outResp.redirect(downUrl);
+                return;
             }
         }
-        if (!downloadingCache[fileId]) {
-            const down = await Ali.getDownload(shareId, fileId, flag == 'down');
-            downloadingCache[fileId] = down;
-        }
-        outResp.redirect(downloadingCache[fileId].url);
-        return;
+        return await Quark.chunkStream(
+            inReq,
+            outResp,
+            downUrl,
+            ids[1],
+            Object.assign(
+                {
+                    Cookie: Quark.cookie,
+                },
+                Quark.baseHeader,
+            ),
+        );
     }
+}
+
+function findElementIndex(arr, elem) {
+  return arr.indexOf(elem);
 }
 
 async function play(inReq, _outResp) {
+    const flag = inReq.body.flag;
     const id = inReq.body.id;
     const ids = id.split('*');
-    const transcoding = await Ali.getLiveTranscoding(ids[0], ids[1]);
-    transcoding.sort((a, b) => b.template_width - a.template_width);
-    const urls = [];
-    const proxyUrl = inReq.server.address().url + inReq.server.prefix + '/proxy';
-    urls.push('原画');
-    urls.push(`${proxyUrl}/src/down/${ids[0]}/${ids[1]}/.bin`);
-    const result = {
-        parse: 0,
-        url: urls,
-    };
-    if (ids[2]) {
-        result.extra = {
-            subt: `${proxyUrl}/src/subt/${ids[0]}/${ids[2]}/.bin`,
+    let idx = 0;
+    if (flag.startsWith('Ali-')) {
+        const transcoding = await Ali.getLiveTranscoding(ids[0], ids[1]);
+        aliTranscodingCache[ids[1]] = transcoding;
+        transcoding.sort((a, b) => b.template_width - a.template_width);
+        const p= ['1440P','1080P','720P','480P','360P'];
+        const arr =['QHD','FHD','HD','SD','LD'];
+        const urls = [];
+        const proxyUrl = inReq.server.address().url + inReq.server.prefix + '/proxy/ali';
+        urls.push('SRC');
+        urls.push(`${proxyUrl}/src/down/${ids[0]}/${ids[1]}/.bin`);
+        const result = {
+            parse: 0,
+            url: urls,
         };
+        if (ids[2]) {
+            result.extra = {
+                subt: `${proxyUrl}/src/subt/${ids[0]}/${ids[2]}/.bin`,
+            };
+        }
+        transcoding.forEach((t) => {
+            idx = findElementIndex(arr,t.template_id);
+            urls.push(p[idx]);
+            urls.push(`${proxyUrl}/trans/${t.template_id.toLowerCase()}/${ids[0]}/${ids[1]}/.m3u8`);
+        });
+        return result;
+    } else if (flag.startsWith('Quark-')) {
+        const transcoding = (await Quark.getLiveTranscoding(ids[0], ids[1], ids[2], ids[3])).filter((t) => t.accessable);
+        quarkTranscodingCache[ids[2]] = transcoding;
+        const urls = [];
+        const p= ['2160P','1440P','1080P','720P','480P','360P'];
+        const arr =['4k','2k','super','high','low','normal'];
+        const proxyUrl = inReq.server.address().url + inReq.server.prefix + '/proxy/quark';
+        urls.push('Proxy');
+        urls.push(`${proxyUrl}/src/down/${ids[0]}/${encodeURIComponent(ids[1])}*${ids[2]}*${ids[3]}/.bin`);
+        urls.push('SRC');
+        urls.push(`${proxyUrl}/src/redirect/${ids[0]}/${encodeURIComponent(ids[1])}*${ids[2]}*${ids[3]}/.bin`);
+        const result = {
+            parse: 0,
+            url: urls,
+            header: Object.assign(
+                {
+                    Cookie: Quark.cookie,
+                },
+                Quark.baseHeader,
+            ),
+        };
+        if (ids[3]) {
+            result.extra = {
+                subt: `${proxyUrl}/src/subt/${ids[0]}/${encodeURIComponent(ids[1])}*${ids[4]}*${ids[5]}/.bin`,
+            };
+        }
+        transcoding.forEach((t) => {
+            idx = findElementIndex(arr,t.resolution);
+            urls.push(p[idx]);
+            urls.push(`${proxyUrl}/trans/${t.resolution.toLowerCase()}/${ids[0]}/${encodeURIComponent(ids[1])}*${ids[2]}*${ids[3]}/.mp4`);
+        });
+        return result;
     }
-    transcoding.forEach((t) => {
-        urls.push(t.template_id === 'LD' ? '极速' : t.template_id === 'SD' ? '标清' : t.template_id === 'HD' ? '高清' : t.template_id === 'FHD' ? '超清' : t.template_id === 'QHD' ? '蓝光' : t.template_id);
-        urls.push(`${proxyUrl}/trans/${t.template_id.toLowerCase()}/${ids[0]}/${ids[1]}/.m3u8`);
-    });
-    return result;
 }
+
 
 async function search(inReq, _outResp) {
     const pg = inReq.body.page;
@@ -360,6 +464,8 @@ async function search(inReq, _outResp) {
         list: videos,
     };
 }
+
+
 
 async function test(inReq, outResp) {
     try {
@@ -441,7 +547,7 @@ export default {
         fastify.post('/detail', detail);
         fastify.post('/play', play);
         fastify.post('/search', search);
-        fastify.get('/proxy/:what/:flag/:shareId/:fileId/:end', proxy);
+        fastify.get('/proxy/:site/:what/:flag/:shareId/:fileId/:end', proxy);
         fastify.get('/test', test);
     },
 };
