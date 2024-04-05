@@ -33,11 +33,11 @@ import netflav from './spider/video/netflav.js';
 import appys from './spider/video/appys.js';
 import ng from './spider/video/ng.js';
 import pk_push from './spider/video/push.js';
-/*
-const spiders = [douban,kunyu77,nongmin,appys,vcm3u8,live,cntv,saohuo,tudou,kkys,czzy,ikanbot,sharenice,ktv,ttkx,meijumi,yingso,avlive,maiyoux,doll,netflav,avm3u8,_13bqg,bookan,bengou,laobaigs,coco,tewx,copymanga,hm,mhdq];
-*/
-const spiders = [douban,kunyu77,nongmin,appys,vcm3u8,live,cntv,saohuo,tudou,kkys,czzy,ikanbot,sharenice,ktv,ttkx,meijumi,yingso,_13bqg,bookan,bengou,laobaigs,coco,copymanga];
 
+const spiders = [douban,kunyu77,nongmin,appys,vcm3u8,live,cntv,saohuo,tudou,kkys,czzy,ikanbot,sharenice,ktv,ttkx,meijumi,yingso,avlive,maiyoux,doll,netflav,avm3u8,_13bqg,bookan,bengou,laobaigs,coco,tewx,copymanga,hm,mhdq];
+/*
+const spiders = [douban,kunyu77,nongmin,appys,vcm3u8,live,cntv,saohuo,tudou,kkys,czzy,ikanbot,sharenice,ktv,ttkx,meijumi,yingso,_13bqg,bookan,bengou,laobaigs,coco,copymanga];
+*/
 const spiderPrefix = '/spider';
 
 /**
