@@ -8,7 +8,7 @@ import CryptoJS from 'crypto-js';
 let url = 'https://api.tyun77.cn';
 let device = {};
 let timeOffset = 0;
-const appVer = '2.3.0';
+const appVer = '2.2.9';
 const rsa = NodeRSA(
     `-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7QHUVAUM7yghB0/3qz5C
