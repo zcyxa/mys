@@ -73,6 +73,21 @@ export default {
             {name: '普通源 ', url: 'https://gitee.com/zhuyuxian/cyys/raw/master/live20220813.txt', index: 'false'},
         ]
     },
+
+    avlive: {
+        url: [
+           { name: "麻豆", "url": "https://raw.githubusercontent.com/lndsqhj/LIVE/main/madou.txt" , index: "true" }, 
+           { name: "玩偶", "url": "https://raw.githubusercontent.com/lndsqhj/LIVE/main/hongkongdoll.txt" , index: "true" }, 
+           { name: "吴梦梦", "url": "https://raw.githubusercontent.com/lndsqhj/LIVE/main/monlingwu.txt" , index: "true" },       
+           { name: "刘玥", "url":"https://raw.githubusercontent.com/lndsqhj/LIVE/main/juneliu.txt", index: "true" },
+           { name: "爱豆", "url":"https://raw.githubusercontent.com/lndsqhj/LIVE/main/idol.txt", index: "true" }, 
+           { name: "仓库", "url":"https://raw.githubusercontent.com/lndsqhj/LIVE/main/hsck.txt", index: "true" },
+           { name: "SEA ", url: "https://raw.githubusercontent.com/supermeguo/BoxRes/main/Myuse/18+.txt", index: "true" },
+           { name: "SEB", url: "https://raw.githubusercontent.com/supermeguo/BoxRes/main/Myuse/live18.txt", index: "true"  },
+           { name: "SEC ", "url": "https://files.catbox.moe/3m5dbm.txt" , index: "true" }
+        ]
+      },
+
     quark: {
         cookie: '_UP_A4A_11_=wb9061d5549a416aae65fa7fe5256e14; cna=0Kh0GzWzSjoCASrvPXVoDeCs; isg=BEZGLfWmX_lizQsdjqpsTJ0IlzzIp4ph-5Uo1zBvfWlEM-ZNmDUEcSzCDy9am4J5; _UP_F7E_8D_=0z44HdIBxZYiRqPMj%2FZ1g4e2tNIi%2FpwZKNd9fxNMQOzIiMzkZQhRBzb%2BZL%2B%2BO5S0fafUsIjVkYhLHpvA%2Fhicy1HUTu2LBlCPom4qTWeMFqCgN55FQx3lIyu%2B1OsWIKjG1w4pOGWcZjvuo4m2jHof9eRj66wpeTPO4r7NBD%2F4wEE0IpjIBHWretgcndtvmRjON1%2F4YBxAXEcKzEB7sy%2FnvOHZ47Hvtvq2wLtchZ7GH2KZHru1xRmXkitDMrXGp4Mq96p4CY6W9u6Jhb7b0BdOueNucrWuSJCv%2BT0a2R2jNTzdldBvB7trVMH3IhYSoUw2AYTF7eNiF%2BU9DgASvb4Vfvosp%2BEFl7vny0TNscSZMOl8DcfixlwkYTpwSCY4564fHGA9cyxKste3pBRULSTR8JY7n3P6zUYaG%2BofGCzsMul3NGY6wl6lBISYJ2cSDS100Hjqhb3FcWuLwSSSdvGDxA%3D%3D; _UP_D_=pc; __pus=1ad4605eb1fe0e1508039d89ae4d1cc7AASoe/lxbpyoqTjeWOnw06Gy+QQbSQWrQgjTwtbTp9YZA/gVheawxhDsjLIHgxJZevEOvVat/wfWYGB0cPcJEP8k; __kp=97c7d430-dd28-11ee-8159-8f948d802f39; __kps=AATBFybICrgIJhbvxr6ZGRqA; __ktd=Jedm5mxXUyichne07SX1XA==; __uid=AATBFybICrgIJhbvxr6ZGRqA; __puus=c1208ffb078de5f93208b5d9bbab3597AATTVe6ew6yLQGi0xGsKPNIdKj6l2HmbHun7oCGfBGfX8lrbT9H8gKqQd7mLqcdOqVeshk/HZnPY2vFJtSn4OtoJ7FbKSf9UsSGYEiHc+W22G63Q06yKczUStgGbMxuumCivlvGztJrQ+ZBlYEDD7f7dbNiZx74PpAOSX3Um4z+x8Gl9qUd/qN1dhPZKMIgCZKdwK1uD9Hvw966UtTrUfFaN'
     },
