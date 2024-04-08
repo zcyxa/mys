@@ -13,7 +13,7 @@ import { load } from 'cheerio';
         'Referer': siteUrl + '/'
     };
     
-    let jxUrl = ['https://api.cnmcom.com/webcloud/aaa1.php?url=','https://api.cnmcom.com/webcloud/bbb1.php?url=','https://api.cnmcom.com/webcloud/ccc1.php?vid=', 'https://api.cnmcom.com/webcloud/m3u8.php?url='];
+    let jxUrl = ['https://api.cnmcom.com/webcloud/aaanm.php?url=','https://api.cnmcom.com/webcloud/bbbnm.php?url=','https://api.cnmcom.com/webcloud/cccnm.php?vid=', 'https://api.cnmcom.com/webcloud/m3u8.php?url='];
     
     
     async function request(reqUrl, postData, post) {
