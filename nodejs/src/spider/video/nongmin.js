@@ -9,11 +9,12 @@ import { load } from 'cheerio';
     let siteKey = '';
     let siteType = 0;
     let headers = {
-        'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+
+        'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
         'Referer': siteUrl + '/'
     };
     
-    let jxUrl = ['https://api.cnmcom.com/webcloud/aaanm.php?url=','https://api.cnmcom.com/webcloud/bbbnm.php?url=','https://api.cnmcom.com/webcloud/cccnm.php?vid=', 'https://api.cnmcom.com/webcloud/m3u8.php?url='];
+    let jxUrl = ['https://api.cnmcom.com/webcloud/anmm.php?url=','https://api.cnmcom.com/webcloud/bnmm.php?url=','https://api.cnmcom.com/webcloud/cnmm.php?vid=', 'https://api.cnmcom.com/webcloud/m3u8.php?url='];
     
     
     async function request(reqUrl, postData, post) {
