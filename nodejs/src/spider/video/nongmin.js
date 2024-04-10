@@ -14,7 +14,7 @@ import { load } from 'cheerio';
         'Referer': siteUrl + '/'
     };
     
-    let jxUrl = ['https://api.cnmcom.com/webcloud/anmm.php?url=','https://api.cnmcom.com/webcloud/bnmm.php?url=','https://api.cnmcom.com/webcloud/cnmm.php?vid=', 'https://api.cnmcom.com/webcloud/m3u8.php?url='];
+    let jxUrl = ['https://api.cnmcom.com/webcloud/nmapidd/anmm.php?url=','https://api.cnmcom.com/webcloud/nmapidd/bnmm.php?url=','https://api.cnmcom.com/webcloud/nmapidd/cnmm.php?vid=', 'https://api.cnmcom.com/webcloud/m3u8.php?url='];
     
     
     async function request(reqUrl, postData, post) {
