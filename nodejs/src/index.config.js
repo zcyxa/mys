@@ -76,14 +76,13 @@ export default {
 
     avlive: {
         url: [
-           { name: "麻豆", "url": "https://raw.githubusercontent.com/lndsqhj/LIVE/main/madou.txt" , index: "true" }, 
-           { name: "玩偶", "url": "https://raw.githubusercontent.com/lndsqhj/LIVE/main/hongkongdoll.txt" , index: "true" }, 
-           { name: "吴梦梦", "url": "https://raw.githubusercontent.com/lndsqhj/LIVE/main/monlingwu.txt" , index: "true" },       
-           { name: "刘玥", "url":"https://raw.githubusercontent.com/lndsqhj/LIVE/main/juneliu.txt", index: "true" },
-           { name: "爱豆", "url":"https://raw.githubusercontent.com/lndsqhj/LIVE/main/idol.txt", index: "true" }, 
-           { name: "仓库", "url":"https://raw.githubusercontent.com/lndsqhj/LIVE/main/hsck.txt", index: "true" },
-           { name: "SEA ", url: "https://raw.githubusercontent.com/supermeguo/BoxRes/main/Myuse/18+.txt", index: "true" },
-           { name: "SEB", url: "https://raw.githubusercontent.com/supermeguo/BoxRes/main/Myuse/live18.txt", index: "true"  },
+           { name: "麻豆", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/LIVE/main/madou.txt" , index: "true" }, 
+           { name: "玩偶", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/LIVE/main/hongkongdoll.txt" , index: "true" }, 
+           { name: "吴梦梦", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/LIVE/main/monlingwu.txt" , index: "true" },       
+           { name: "刘玥", "url":"https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/LIVE/main/juneliu.txt", index: "true" },
+           { name: "爱豆", "url":"https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/LIVE/main/idol.txt", index: "true" }, 
+           { name: "仓库", "url":"https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/LIVE/main/hsck.txt", index: "true" },
+           { name: "SEA ", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/supermeguo/BoxRes/main/Myuse/18+.txt", index: "true" },
            { name: "SEC ", "url": "https://files.catbox.moe/3m5dbm.txt" , index: "true" }
         ]
       },
