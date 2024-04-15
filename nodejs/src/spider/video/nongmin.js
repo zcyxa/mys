@@ -14,6 +14,18 @@ import { load } from 'cheerio';
         'Referer': siteUrl + '/'
     };
     
+    let headers1 = {
+        'Host': 'api.cnmcom.com',
+        'Sec-Fetch-Site': 'none',
+        'Connection': 'keep-alive',
+        'Sec-Fetch-Mode': 'navigate',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
+        'Accept-Language': 'zh-CN,zh-Hans;q=0.9',
+        'Sec-Fetch-Dest': 'iframe',
+        'Accept-Encoding': 'gzip, deflate, br'
+    };
+    
     let jxUrl = ['https://api.cnmcom.com/webcloud/nmapidd/anmm.php?url=','https://api.cnmcom.com/webcloud/nmapidd/bnmm.php?url=','https://api.cnmcom.com/webcloud/nmapidd/cnmm.php?vid=', 'https://api.cnmcom.com/webcloud/m3u8.php?url='];
     
     
@@ -27,6 +39,16 @@ import { load } from 'cheerio';
 
         return res.data;
     }
+
+    async function request1(reqUrl, post) {
+        let res = await req(reqUrl, {
+            method: post ? 'post' : 'get',
+            headers: headers1
+        });
+
+        return res.data;
+    }
+
 
     async function init(inReq, _outResp) {
         if (inReq.server.config.nongmin.url) {
@@ -96,13 +118,15 @@ async function home(filter) {
             let nameUrls = $('section.main > div > script:nth-child(1)').text().split("mac_url='")[1].split("';")[0];
             let playUrls = [];
             let playFroms = [];
+            const html1 = await request('http://127.0.0.18011');  //新增自用解析服务
+            let pkjxUrl=html1.split(',')
             if($('div.hd > ul > li > a').text().indexOf('云播') >= 0) {
                 playFroms.push('云播');
                 playUrls.push(nameUrls.replaceAll('$', '$' + jxUrl[3]));
             } else {
                 for(let i=1;i<=3;i++) {
                     playFroms.push('线路' + i);
-                    playUrls.push(nameUrls.replaceAll('$', '$'+jxUrl[i-1]));
+                    playUrls.push(nameUrls.replaceAll('$', '$'+pkjxUrl[i-1]));
     
                 }
             }
@@ -144,7 +168,7 @@ async function home(filter) {
     async function play(inReq, _outResp) {
         const id = inReq.body.id;
         let playUrl = id;
-        const html = await request(playUrl);
+        const html = await request1(playUrl);
         const $ = load(html);
         for(const n of $('script')) {
             if($(n).text().indexOf("url: '") >= 0) {
