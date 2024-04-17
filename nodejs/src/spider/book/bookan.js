@@ -199,7 +199,7 @@ async function test(inReq, outResp) {
 export default {
     meta: {
         key: 'bookan',
-        name: '📖 博看听书',
+        name: '🎧️ 博看听书',
         type: 10,
     },
    api: async (fastify) => {
