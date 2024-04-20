@@ -41,7 +41,7 @@ import appys from './spider/video/appys.js';
 import ng from './spider/video/ng.js';
 import pk_push from './spider/video/push.js';
 
-const spiders = [pk_push,douban,yiqikan,xzys,aiyingshi,boo,xinshijue,appys,vcm3u8,live,cntv,saohuo,tudou,kkys,czzy,ikanbot,sharenice,anfun,ttkx,meijumi,ktv,yingso,avlive,maiyoux,doll,netflav,avm3u8,_13bqg,bookan,ts230,bengou,laobaigs,coco,baozi,tewx,copymanga,hm,mhdq];
+const spiders = [pk_push,douban,kunyu77,xzys,aiyingshi,boo,xinshijue,appys,vcm3u8,live,cntv,saohuo,tudou,kkys,czzy,ikanbot,sharenice,anfun,ttkx,meijumi,ktv,yingso,avlive,maiyoux,doll,netflav,avm3u8,_13bqg,bookan,ts230,bengou,laobaigs,coco,baozi,tewx,copymanga,hm,mhdq];
 /*
 const spiders = [douban,nongmin,appys,vcm3u8,live,cntv,saohuo,tudou,kkys,czzy,ikanbot,sharenice,ktv,ttkx,meijumi,yingso,_13bqg,bookan,bengou,laobaigs,coco,copymanga];
 */
