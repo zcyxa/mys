@@ -1,43 +1,16 @@
 export default {
-  cm: {
-    url: "https://tv.yydsys.top"
-  },
-  nangua: {
-    url: "http://ys.changmengyun.com"
-  },
-  ysche: {
-    url: "https://www.weixine.link"
-  },
-  xiaoya: {
-    url: "http://120.76.118.109:4567/vod1/"
-  },
 live: {
         contents: 'https://gitee.com/galnt/cctv/raw/master/contents.txt', // 按省区分的目录,供参考,可以不添加
         url: [
-            {name: '范明明 ', url: 'https://live.fanmingming.com/tv/m3u/ipv6.m3u', index: 'true'},
             {name: '肥羊精选 ', url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Ftindy/IPTV-URL/main/SXYD.m3u', index: 'true'},
             {name: '优质源 ', url: 'https://raw.gitmirror.com/wwb521/live/main/tv.txt', index: 'true'},
             {name: 'M3U源 ', url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/wwb521/live/main/tv.m3u', index: 'false'},
-            {name: 'ITV ', url: 'https://mirror.ghproxy.com/raw.githubusercontent.com/ssili126/tv/main/itvlist.txt',},
+            {name: 'ITV ', url: 'https://tv.smcq.fun/bg/itvlist.txt',},
             {name: "道长源 ", "url": "https://mirror.ghproxy.com/raw.githubusercontent.com/dxawi/0/main/tvlive.txt"},
-            {name: "俊于源 ", "url": "http://home.jundie.top:81/Cat/tv/live.txt"},
-            {name: '普通源 ', url: 'https://gitee.com/zhuyuxian/cyys/raw/master/live20220813.txt', index: 'false'},
+            {name: "俊于源 ", "url": "http://home.jundie.top:81/Cat/tv/live.txt"}
         ]
     },
-
-    avlive: {
-        url: [
-           { name: "麻豆", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/LIVE/main/madou.txt" , index: "true" }, 
-           { name: "玩偶", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/LIVE/main/hongkongdoll.txt" , index: "true" }, 
-           { name: "吴梦梦", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/LIVE/main/monlingwu.txt" , index: "true" },       
-           { name: "刘玥", "url":"https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/LIVE/main/juneliu.txt", index: "true" },
-           { name: "爱豆", "url":"https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/LIVE/main/idol.txt", index: "true" }, 
-           { name: "仓库", "url":"https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/LIVE/main/hsck.txt", index: "true" },
-           { name: "SEA ", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/supermeguo/BoxRes/main/Myuse/18+.txt", index: "true" },
-           { name: "SEC ", "url": "https://files.catbox.moe/3m5dbm.txt" , index: "true" }
-        ]
-      },
-    vcm3u8: {
+vcm3u8: {
         ffm3u8: [{
             name: "非凡采集",
             url: "https://cj.ffzyapi.com/api.php/provide/vod/from/ffm3u8/",
@@ -105,7 +78,7 @@ live: {
             search: true
         }]
     },
-  appys: {
+appys: {
     ttmjas: [{
       name: "天天美剧",
       url: "https://www.ttmja.com/api.php/app/",
@@ -122,7 +95,7 @@ live: {
       search: true
     }]
   },
-    avm3u8: {
+avm3u8: {
         md1m3u8: [{
             name: "麻豆①",
             url: "http://www.md91.cc/api.php/provide/vod/from/m3u8/",
@@ -217,7 +190,7 @@ live: {
             search: true
         }]
     },
-  alist: [
+alist: [
     {
       "name": "🟢 合集",
       "server": "http://www.jczyl.top:5244/"
@@ -335,7 +308,7 @@ live: {
       "server": "https://pan.xwbeta.com"
     }
   ],
-  color: [{
+color: [{
     light: {
       bg: "http://php.540734621.xyz/tcp/1.php",
       bgMask: "0x50ffffff",
