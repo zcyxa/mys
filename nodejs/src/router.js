@@ -27,7 +27,6 @@ import tewx from './spider/book/tewx.js';
 import copymanga from './spider/book/copymanga.js';
 import hm from './spider/book/韩漫基地.js';
 import mhdq from './spider/book/mhdq.js';
-import xiaoya-alist from './spider/video/xiaoya-alist.js';
 
 const spiders = [pk_push,douban,aiyingshi,xinshijue,appys,vcm3u8,live,cntv,saohuo,nongmin,czzy,sharenice,ktv,yingso,avlive,maiyoux,avm3u8,_13bqg,bookan,ts230,bengou,laobaigs,coco,baozi,tewx,copymanga,hm,mhdq];
 /*
