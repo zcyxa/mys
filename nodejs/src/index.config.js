@@ -2,12 +2,7 @@ export default {
 live: {
         contents: 'https://gitee.com/galnt/cctv/raw/master/contents.txt', // 按省区分的目录,供参考,可以不添加
         url: [
-            {name: '肥羊精选 ', url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Ftindy/IPTV-URL/main/SXYD.m3u', index: 'true'},
-            {name: '优质源 ', url: 'https://raw.gitmirror.com/wwb521/live/main/tv.txt', index: 'true'},
-            {name: 'M3U源 ', url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/wwb521/live/main/tv.m3u', index: 'false'},
-            {name: 'ITV ', url: 'https://tv.smcq.fun/bg/itvlist.txt',},
-            {name: "道长源 ", "url": "https://mirror.ghproxy.com/raw.githubusercontent.com/dxawi/0/main/tvlive.txt"},
-            {name: "俊于源 ", "url": "http://home.jundie.top:81/Cat/tv/live.txt"}
+            {name: 'ITV ', url: 'https://tv.smcq.fun/bg/itvlist.txt'}
         ]
     },
 vcm3u8: {
