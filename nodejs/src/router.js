@@ -6,10 +6,10 @@ import xinshijue from './spider/video/xinshijue.js';
 import appys from './spider/video/appys.js';
 import vcm3u8 from './spider/video/vcm3u8.js';
 import live from './spider/video/live.js';
-import cntv from './spider/video/cntv.js';
 import saohuo from './spider/video/saohuo.js';
 import nongmin from './spider/video/nongmin.js';
 import czzy from './spider/video/czzy.js';
+import cntv from './spider/video/cntv.js';
 import sharenice from './spider/video/sharenice.js';
 import ktv from './spider/video/ktv.js';
 import avlive from './spider/video/avlive.js';
@@ -27,7 +27,7 @@ import copymanga from './spider/book/copymanga.js';
 import hm from './spider/book/韩漫基地.js';
 import mhdq from './spider/book/mhdq.js';
 
-const spiders = [pk_push,douban,aiyingshi,xinshijue,appys,vcm3u8,live,cntv,saohuo,nongmin,czzy,sharenice,ktv,avlive,maiyoux,avm3u8,_13bqg,bookan,ts230,bengou,laobaigs,coco,baozi,tewx,copymanga,hm,mhdq];
+const spiders = [pk_push,douban,aiyingshi,xinshijue,appys,vcm3u8,live,saohuo,nongmin,czzy,cntv,sharenice,ktv,avlive,maiyoux,avm3u8,_13bqg,bookan,ts230,bengou,laobaigs,coco,baozi,tewx,copymanga,hm,mhdq];
 /*
 const spiders = [douban,nongmin,appys,vcm3u8,live,cntv,saohuo,tudou,kkys,czzy,ikanbot,sharenice,ktv,ttkx,meijumi,yingso,_13bqg,bookan,bengou,laobaigs,coco,copymanga];
 */
