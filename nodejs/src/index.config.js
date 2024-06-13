@@ -1,29 +1,4 @@
 export default {
-  kunyu77: {
-    testcfg: {
-      bbbb: "aaaaa"
-    }
-  },
-    wogg: {
-    url: "https://www.wogg.link/"
-  },
-  baipiaoys: {
-    url: "https://www.baipiaoys.com:9092",
-    jx: "https://www.baipiao-ys.cc:6062/player/analysis.php?vjavascript:;="
-  },
-  ali: {
-    token: "f59ead31e7934f4fb113d2725a74c6dc",
-    token280: "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhMmY0NTAwNGY2M2E0NWY3YWM2OGYxMDk1M2M4NjE2NSIsImF1ZCI6IjczZTYxMTgzMWE3YzRkODdhYzQ5Yzg0ODFiZjlmMmM0IiwiZXhwIjoxNzIyOTM1MzMwLCJpYXQiOjE3MTUxNTkzMzAsImp0aSI6IjViZDQ2ODg0OGFhZDQ5MjRiNTFkYjYwY2EzNjFlMmExIn0.xCMoCCKTeeJDey5Z2C94QTPOoKo8ZN82yQGdQZ9q7YzqpeZMASi_R6KRJLrscsipU_Y40v88LbdToRq0bEeHTQ"
-  },
-  quark: {
-    cookie: "_UP_A4A_11_=wb9071912ee7432480e35aeabbb6ddea; tfstk=ekjpAX9iO5VH2Fh2SkUGzh95hZegmMBEX6WjqQAnP1COn1RkPevH2U1BsMYkAW-JNC1r-DAkxgCO_15hKTjR70BVUM2eqJ-FL3-7iSqcw9We48lw8BEDSAJlJSV0mlD4Cp0YiwxGi8Ip5DgTYEs5bGw2OE-_T_sAXpL_S9OspnjwpQOcdMnSVF9pJI6B6gJOmiUF8jAvE2eTB4uyRdlr-LdqM6g4mdd0pu3rzFywBI2T04uy-sp9iRSZz4894; __pus=47652ff3473bd4bb2837291afbdb9918AATuinm+T32Nfm9sfKUmm8mvtQdHG72BjepENe/EpgcjYF9NsS8CkwKMips+pl2aQhJtFFv4TeKrFlwcKG/rIGF+; __kp=37c3b1b0-0610-11ef-979b-0bdca92c2597; __kps=AAS8OwzPjnUWx3+9oTtCMpnL; __ktd=YMzTd7jp1DARWGeu21cI7g==; __uid=AAS8OwzPjnUWx3+9oTtCMpnL; __puus=3025cbf46f67a03222ac81b303435eeaAARFFMMTD8afkIE18s4yF8eeFH4M7XPIBXOAwqKeTNLo/DAGs0IDRLIQE2JWnziZMJVOJvvMWfFEsyBlFLR76rCaEyuNASdR03g2G1fkygkYvsoa56hLFGBuo7Nu05uwASPVjJcu5UuHWYmqcI6Rm7i/HthBvNwiI91DOXKvWW4f61Vsn+Dol704z5KNIbc5LFR1jpR06bRSsk7rXiwFSkMx"
-  },
-  tudou: {
-    url: "https://tudou.lvdoui.top"
-  },
-  wobg: {
-    url: "https://wobge.run.goorm.io"
-  },
   cm: {
     url: "https://tv.yydsys.top"
   },
@@ -36,34 +11,13 @@ export default {
   xiaoya: {
     url: "http://120.76.118.109:4567/vod1/"
   },
-  nm: {
-    url: "https://v.nmvod.cn"
-  },
-  unyun: {
-    url: "https://zyb.upyunso.com"
-  },
-  jojo: {
-    name: "JOJO影视",
-    url: "https://jiohub.top"
-  },
-  xxys: {
-    url: "http://yingszj.xn--654a.cc/api.php/app/"
-  },
-    live: {
+live: {
         contents: 'https://gitee.com/galnt/cctv/raw/master/contents.txt', // 按省区分的目录,供参考,可以不添加
         url: [
             {name: '范明明 ', url: 'https://live.fanmingming.com/tv/m3u/ipv6.m3u', index: 'true'},
-            {
-                name: '肥羊精选 ',
-                url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Ftindy/IPTV-URL/main/SXYD.m3u',
-                index: 'true'
-            },
+            {name: '肥羊精选 ', url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/Ftindy/IPTV-URL/main/SXYD.m3u', index: 'true'},
             {name: '优质源 ', url: 'https://raw.gitmirror.com/wwb521/live/main/tv.txt', index: 'true'},
-            {
-                name: 'M3U源 ',
-                url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/wwb521/live/main/tv.m3u',
-                index: 'false'
-            },
+            {name: 'M3U源 ', url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/wwb521/live/main/tv.m3u', index: 'false'},
             {name: 'ITV ', url: 'https://mirror.ghproxy.com/raw.githubusercontent.com/ssili126/tv/main/itvlist.txt',},
             {name: "道长源 ", "url": "https://mirror.ghproxy.com/raw.githubusercontent.com/dxawi/0/main/tvlive.txt"},
             {name: "俊于源 ", "url": "http://home.jundie.top:81/Cat/tv/live.txt"},
@@ -83,13 +37,6 @@ export default {
            { name: "SEC ", "url": "https://files.catbox.moe/3m5dbm.txt" , index: "true" }
         ]
       },
-
-    quark: {
-        cookie: '_UP_A4A_11_=wb9061d5549a416aae65fa7fe5256e14; cna=0Kh0GzWzSjoCASrvPXVoDeCs; isg=BEZGLfWmX_lizQsdjqpsTJ0IlzzIp4ph-5Uo1zBvfWlEM-ZNmDUEcSzCDy9am4J5; _UP_F7E_8D_=0z44HdIBxZYiRqPMj%2FZ1g4e2tNIi%2FpwZKNd9fxNMQOzIiMzkZQhRBzb%2BZL%2B%2BO5S0fafUsIjVkYhLHpvA%2Fhicy1HUTu2LBlCPom4qTWeMFqCgN55FQx3lIyu%2B1OsWIKjG1w4pOGWcZjvuo4m2jHof9eRj66wpeTPO4r7NBD%2F4wEE0IpjIBHWretgcndtvmRjON1%2F4YBxAXEcKzEB7sy%2FnvOHZ47Hvtvq2wLtchZ7GH2KZHru1xRmXkitDMrXGp4Mq96p4CY6W9u6Jhb7b0BdOueNucrWuSJCv%2BT0a2R2jNTzdldBvB7trVMH3IhYSoUw2AYTF7eNiF%2BU9DgASvb4Vfvosp%2BEFl7vny0TNscSZMOl8DcfixlwkYTpwSCY4564fHGA9cyxKste3pBRULSTR8JY7n3P6zUYaG%2BofGCzsMul3NGY6wl6lBISYJ2cSDS100Hjqhb3FcWuLwSSSdvGDxA%3D%3D; _UP_D_=pc; __pus=1ad4605eb1fe0e1508039d89ae4d1cc7AASoe/lxbpyoqTjeWOnw06Gy+QQbSQWrQgjTwtbTp9YZA/gVheawxhDsjLIHgxJZevEOvVat/wfWYGB0cPcJEP8k; __kp=97c7d430-dd28-11ee-8159-8f948d802f39; __kps=AATBFybICrgIJhbvxr6ZGRqA; __ktd=Jedm5mxXUyichne07SX1XA==; __uid=AATBFybICrgIJhbvxr6ZGRqA; __puus=c1208ffb078de5f93208b5d9bbab3597AATTVe6ew6yLQGi0xGsKPNIdKj6l2HmbHun7oCGfBGfX8lrbT9H8gKqQd7mLqcdOqVeshk/HZnPY2vFJtSn4OtoJ7FbKSf9UsSGYEiHc+W22G63Q06yKczUStgGbMxuumCivlvGztJrQ+ZBlYEDD7f7dbNiZx74PpAOSX3Um4z+x8Gl9qUd/qN1dhPZKMIgCZKdwK1uD9Hvw966UtTrUfFaN'
-    },
-    ysche: {
-        url: 'https://www.weixine.link',
-    },
     vcm3u8: {
         ffm3u8: [{
             name: "非凡采集",
@@ -132,11 +79,6 @@ export default {
             url: 'https://www.39kan.com/api.php/provide/vod/at/json',
             search: true
         }],
-        kuaiyu: [{
-            name: '快云',
-            url: 'https://www.kuaiyunzy.com/api.php/provide/vod/at/json',
-            search: true
-        }],
         ikunzy: [{
             name: '爱坤',
             url: 'https://ikunzyapi.com/api.php/provide/vod/at/json',
@@ -145,11 +87,6 @@ export default {
         collec: [{
             name: '卧龙',
             url: 'https://collect.wolongzyw.com/api.php/provide/vod/at/json',
-            search: true
-        }],
-        m3u8ap: [{
-            name: '樱花',
-            url: 'https://m3u8.apiyhzy.com/api.php/provide/vod/at/json',
             search: true
         }],
         apitia: [{
@@ -162,54 +99,13 @@ export default {
             url: 'https://cj.vodimg.top/api.php/provide/vod/at/json',
             search: true
         }],
-        p2100d: [{
-            name: '飘零',
-            url: 'https://p2100.net/api.php/provide/vod/at/json',
-            search: true
-        }],
         apizui: [{
             name: '最大',
             url: 'https://api.zuidapi.com/api.php/provide/vod/at/json',
             search: true
-        }],
-        inmsdf: [{
-            name: '映迷',
-            url: 'https://www.inmi.app/api.php/provide/vod/at/json',
-            search: true
-        }],
-        wjm3u8: [{
-            name: "无尽采集",
-            url: "https://api.wujinapi.me/api.php/provide/vod/from/wjm3u8/",
-            categories: ["伦理片", "爱情片", "喜剧片", "科幻片", "恐怖片", "剧情片", "战争片", "悬疑片", "动画片", "犯罪片", "奇幻片", "邵氏电影", "短剧", "国产剧", "美国剧", "香港剧", "韩国剧", "日本剧", "台湾剧", "泰剧", "海外剧", "国产动漫", "日韩动漫", "欧美动漫", "大陆综艺", "日韩综艺", "港台综艺", "欧美综艺", "体育赛事", "影视解说"],
-            search: true
         }]
     },
   appys: {
-    jiagey: [{
-      name: "飞鸽影视",
-      url: "http://www.jiageys.top/api.php/app/",
-      search: true
-    }],
-    futvds: [{
-      name: "腐宅影视",
-      url: "http://app.zhaifutvapp.com/ruifenglb_api.php/v1.vod",
-      search: true
-    }],
-    mjlnld: [{
-      name: "聚焦",
-      url: "https://www.mjlnl.cn/api.php/v1.vod",
-      search: true
-    }],
-    netfli: [{
-      name: "奈飞狗",
-      url: "https://netflixdog.club/api.php/app/",
-      search: true
-    }],
-    yingsz: [{
-      name: "鑫鑫影视",
-      url: "http://yingszj.xn--654a.cc/api.php/app/",
-      search: true
-    }],
     ttmjas: [{
       name: "天天美剧",
       url: "https://www.ttmja.com/api.php/app/",
@@ -220,64 +116,9 @@ export default {
       url: "https://www.netfly.tv/api.php/app/",
       search: true
     }],
-    kuuses: [{
-      name: "酷客",
-      url: "https://www.kuin.one/api.php/app/",
-      search: true
-    }],
-    siguyy: [{
-      name: "思古影视",
-      url: "https://siguyy.cc/api.php/app/",
-      search: true
-    }],
-    umkasn: [{
-      name: "UM影院",
-      url: "https://www.umkan.cc/mogai_api.php/v1.vod",
-      search: true
-    }],
-    kuindf: [{
-      name: "北极狐",
-      url: "https://www.kuin.one/api.php/app/",
-      search: true
-    }],
-    zxxxxx: [{
-      name: "种子短剧",
-      url: "http://zzdj.cc/api.php/provide/vod",
-      search: true
-    }],
-    weixia: [{
-      name: "曲奇[V2]",
-      url: "https://1234567.weixiaolove.cn/api.php/app/",
-      search: true
-    }],
-    w996sd: [{
-      name: "咕噜[V2]",
-      url: "https://w.996w.top/api.php/app/",
-      search: true
-    }],
-    t_7k78: [{
-      name: "188影视",
-      url: "https://www.7k789.com/mogai_api.php/v1.vod",
-      search: true
-    }],
-    ystvdf: [{
-      name: "追剧影视",
-      url: "https://vip.ystv.lol/api.php/v1.vod",
-      search: true
-    }],
     bro51d: [{
       name: "零刻",
       url: "https://ys.51bro.cn/mogai_api.php/v1.vod",
-      search: true
-    }],
-    hd90df: [{
-      name: "爱城",
-      url: "https://90hd.top/api.php/v1.vod",
-      search: true
-    }],
-    qlkjyd: [{
-      name: "奇乐",
-      url: "http://qlkjy.cn/api.php/v1.vod",
       search: true
     }]
   },
@@ -339,63 +180,17 @@ export default {
             url: 'https://api.maozyapi.com/inc/apijson_vod.php',
             search: true
         }],
-        sbm3u8: [{
-            name: '色逼资源',
-            url: 'https://apilsbzy1.com/api.php/provide/vod/at/json',
-            search: true
-        }],
         jdm3u8: [{
             name: '精东影业',
             url: 'http://chujia.cc/api.php/provide/vod/from/m3u8/',
             search: true
         }],
-        xiaoca: [{
-            name: '小草',
-            url: 'https://www.caoliuzyw.com/api.php/provide/vod/at/json/',
-            search: true
-        }],
-        maozys: [{
-            name: '猫咪',
-            url: 'https://api.maozyapi.com/inc/apijson_vod.php',
-            search: true
-        }],
-        siwazy: [{
-            name: '袜丝',
-            url: 'https://www.siwazyw.tv/api.php/provide/vod/at/json',
-            search: true
-        }],
 
-        semaod: [{
-            name: '色猫',
-            url: 'https://caiji.semaozy.net/inc/apijson_vod.php',
-            search: true
-        }],
-        putaoz: [{
-            name: '葡萄',
-            url: 'https://caiji.putaozyw.net/inc/apijson_vod.php',
-            search: true
-        }],
-        apidda: [{
-            name: '滴滴',
-            url: 'https://api.ddapi.cc/api.php/provide/vod/at/json',
-            search: true
-        }],
-        apixba: [{
-            name: '️雪豹',
-            url: 'https://api.xbapi.cc/api.php/provide/vod/at/json',
-            search: true
-        }],
         kkzydd: [{
             name: '写真',
             url: 'https://kkzy.me/api.php/provide/vod/at/json',
             search: true
         }],
-        tmyysd: [{
-            name: '天美',
-            url: 'https://tmyy.cc/api.php/provide/vod/from/m3u8/',
-            search: true
-        }],
-
         apittz: [{
             name: '天天',
             url: 'https://apittzy.com/api.php/provide/vod/at/json',
