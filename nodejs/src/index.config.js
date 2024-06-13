@@ -1,40 +1,54 @@
 export default {
-    xiaoya_alist: {
-        url: "http://192.168.50.60:4567/vod"
-    },
-    xiaoya_tv: {
-        url: "http://192.168.50.60:4567/vod1"
-    },
-    bilibili: {
-        url: "http://192.168.50.60:4567/bilibili"
-    },
-    youtube: {
-        url: "http://192.168.50.60:4567/youtube"
-    },
-    kunyu77: {
-        testcfg: {
-            bbbb: 'aaaaa',
-        },
-    },
-    ali: {
-        token: '6fbd7add1c9a46afbf3949802067982f',
-        token280: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI3N2ZkMDBiOWQ2ODI0YWM0OWY5MTgxZjUyZDU0NmRjMSIsImF1ZCI6IjczZTYxMTgzMWE3YzRkODdhYzQ5Yzg0ODFiZjlmMmM0IiwiZXhwIjoxNzIwMjUyNjUwLCJpYXQiOjE3MTI0NzY2NTAsImp0aSI6ImEyOTczZDgwODZiMzQzNTA5NmYwM2Y2MjVmMWY1ZjkwIn0.i1TMDEaiskdINZ9Dl6LqC-tngOtJHliEuHGamEK1v7H9innOfuruBlZTnVaQF_lb7wn2RIgQqCDJnk7a20JVww',
-    },
+  kunyu77: {
+    testcfg: {
+      bbbb: "aaaaa"
+    }
+  },
     wogg: {
-        url: 'https://wogg.xyz',
-    },
-    tudou: {
-        url: 'https://tudou.lvdoui.top/',
-    },
-    wobg: {
-        url: 'https://wobge.run.goorm.io',
-    },
-    xxpan: {
-        url: 'https://xpanpan.site',
-    },
-    ikanbot: {
-        url: "https://www.aikanbot.com"
-    },
+    url: "https://www.wogg.link/"
+  },
+  baipiaoys: {
+    url: "https://www.baipiaoys.com:9092",
+    jx: "https://www.baipiao-ys.cc:6062/player/analysis.php?vjavascript:;="
+  },
+  ali: {
+    token: "f59ead31e7934f4fb113d2725a74c6dc",
+    token280: "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhMmY0NTAwNGY2M2E0NWY3YWM2OGYxMDk1M2M4NjE2NSIsImF1ZCI6IjczZTYxMTgzMWE3YzRkODdhYzQ5Yzg0ODFiZjlmMmM0IiwiZXhwIjoxNzIyOTM1MzMwLCJpYXQiOjE3MTUxNTkzMzAsImp0aSI6IjViZDQ2ODg0OGFhZDQ5MjRiNTFkYjYwY2EzNjFlMmExIn0.xCMoCCKTeeJDey5Z2C94QTPOoKo8ZN82yQGdQZ9q7YzqpeZMASi_R6KRJLrscsipU_Y40v88LbdToRq0bEeHTQ"
+  },
+  quark: {
+    cookie: "_UP_A4A_11_=wb9071912ee7432480e35aeabbb6ddea; tfstk=ekjpAX9iO5VH2Fh2SkUGzh95hZegmMBEX6WjqQAnP1COn1RkPevH2U1BsMYkAW-JNC1r-DAkxgCO_15hKTjR70BVUM2eqJ-FL3-7iSqcw9We48lw8BEDSAJlJSV0mlD4Cp0YiwxGi8Ip5DgTYEs5bGw2OE-_T_sAXpL_S9OspnjwpQOcdMnSVF9pJI6B6gJOmiUF8jAvE2eTB4uyRdlr-LdqM6g4mdd0pu3rzFywBI2T04uy-sp9iRSZz4894; __pus=47652ff3473bd4bb2837291afbdb9918AATuinm+T32Nfm9sfKUmm8mvtQdHG72BjepENe/EpgcjYF9NsS8CkwKMips+pl2aQhJtFFv4TeKrFlwcKG/rIGF+; __kp=37c3b1b0-0610-11ef-979b-0bdca92c2597; __kps=AAS8OwzPjnUWx3+9oTtCMpnL; __ktd=YMzTd7jp1DARWGeu21cI7g==; __uid=AAS8OwzPjnUWx3+9oTtCMpnL; __puus=3025cbf46f67a03222ac81b303435eeaAARFFMMTD8afkIE18s4yF8eeFH4M7XPIBXOAwqKeTNLo/DAGs0IDRLIQE2JWnziZMJVOJvvMWfFEsyBlFLR76rCaEyuNASdR03g2G1fkygkYvsoa56hLFGBuo7Nu05uwASPVjJcu5UuHWYmqcI6Rm7i/HthBvNwiI91DOXKvWW4f61Vsn+Dol704z5KNIbc5LFR1jpR06bRSsk7rXiwFSkMx"
+  },
+  tudou: {
+    url: "https://tudou.lvdoui.top"
+  },
+  wobg: {
+    url: "https://wobge.run.goorm.io"
+  },
+  cm: {
+    url: "https://tv.yydsys.top"
+  },
+  nangua: {
+    url: "http://ys.changmengyun.com"
+  },
+  ysche: {
+    url: "https://www.weixine.link"
+  },
+  xiaoya: {
+    url: "http://120.76.118.109:4567/vod1/"
+  },
+  nm: {
+    url: "https://v.nmvod.cn"
+  },
+  unyun: {
+    url: "https://zyb.upyunso.com"
+  },
+  jojo: {
+    name: "JOJO影视",
+    url: "https://jiohub.top"
+  },
+  xxys: {
+    url: "http://yingszj.xn--654a.cc/api.php/app/"
+  },
     czzy: {
         url: 'https://cz01.vip'
     },
@@ -86,13 +100,6 @@ export default {
            { name: "SEC ", "url": "https://files.catbox.moe/3m5dbm.txt" , index: "true" }
         ]
       },
-
-    quark: {
-        cookie: '_UP_A4A_11_=wb9061d5549a416aae65fa7fe5256e14; cna=0Kh0GzWzSjoCASrvPXVoDeCs; isg=BEZGLfWmX_lizQsdjqpsTJ0IlzzIp4ph-5Uo1zBvfWlEM-ZNmDUEcSzCDy9am4J5; _UP_F7E_8D_=0z44HdIBxZYiRqPMj%2FZ1g4e2tNIi%2FpwZKNd9fxNMQOzIiMzkZQhRBzb%2BZL%2B%2BO5S0fafUsIjVkYhLHpvA%2Fhicy1HUTu2LBlCPom4qTWeMFqCgN55FQx3lIyu%2B1OsWIKjG1w4pOGWcZjvuo4m2jHof9eRj66wpeTPO4r7NBD%2F4wEE0IpjIBHWretgcndtvmRjON1%2F4YBxAXEcKzEB7sy%2FnvOHZ47Hvtvq2wLtchZ7GH2KZHru1xRmXkitDMrXGp4Mq96p4CY6W9u6Jhb7b0BdOueNucrWuSJCv%2BT0a2R2jNTzdldBvB7trVMH3IhYSoUw2AYTF7eNiF%2BU9DgASvb4Vfvosp%2BEFl7vny0TNscSZMOl8DcfixlwkYTpwSCY4564fHGA9cyxKste3pBRULSTR8JY7n3P6zUYaG%2BofGCzsMul3NGY6wl6lBISYJ2cSDS100Hjqhb3FcWuLwSSSdvGDxA%3D%3D; _UP_D_=pc; __pus=1ad4605eb1fe0e1508039d89ae4d1cc7AASoe/lxbpyoqTjeWOnw06Gy+QQbSQWrQgjTwtbTp9YZA/gVheawxhDsjLIHgxJZevEOvVat/wfWYGB0cPcJEP8k; __kp=97c7d430-dd28-11ee-8159-8f948d802f39; __kps=AATBFybICrgIJhbvxr6ZGRqA; __ktd=Jedm5mxXUyichne07SX1XA==; __uid=AATBFybICrgIJhbvxr6ZGRqA; __puus=c1208ffb078de5f93208b5d9bbab3597AATTVe6ew6yLQGi0xGsKPNIdKj6l2HmbHun7oCGfBGfX8lrbT9H8gKqQd7mLqcdOqVeshk/HZnPY2vFJtSn4OtoJ7FbKSf9UsSGYEiHc+W22G63Q06yKczUStgGbMxuumCivlvGztJrQ+ZBlYEDD7f7dbNiZx74PpAOSX3Um4z+x8Gl9qUd/qN1dhPZKMIgCZKdwK1uD9Hvw966UtTrUfFaN'
-    },
-    ysche: {
-        url: 'https://www.weixine.link',
-    },
     vcm3u8: {
         ffm3u8: [{
             name: "非凡采集",
@@ -187,44 +194,43 @@ export default {
             search: true
         }]
     },
-    appys: {
-        futv: [{
-            name: '腐宅影视',
-            url: 'http://app.zhaifutvapp.com/ruifenglb_api.php/v1.vod',
-            // categories: ['国产剧', '香港剧', '韩国剧', '欧美剧', '台湾剧', '日本剧', '海外剧', '泰国剧', '短剧', '动作片', '喜剧片', '爱情片', '科幻片', '恐怖片', '剧情片', '战争片', '动漫片', '大陆综艺', '港台综艺', '日韩综艺', '欧美综艺', '国产动漫', '日韩动漫', '欧美动漫', '港台动漫', '海外动漫', '记录片'],                        
-            search: true, //搜索开关 true开 false关
-        }],
-        mjlnl: [{
-            name: '聚焦',
-            url: 'https://www.mjlnl.cn/api.php/v1.vod',
-            // categories: ['国产剧', '香港剧', '韩国剧', '欧美剧', '台湾剧', '日本剧', '海外剧', '泰国剧', '短剧', '动作片', '喜剧片', '爱情片', '科幻片', '恐怖片', '剧情片', '战争片', '动漫片', '大陆综艺', '港台综艺', '日韩综艺', '欧美综艺', '国产动漫', '日韩动漫', '欧美动漫', '港台动漫', '海外动漫', '记录片'],                        
-            search: true, //搜索开关 true开 false关
-        }],
-        netflixdog: [{
-            name: '奈飞狗',
-            url: 'https://netflixdog.club/api.php/app/',
-            // categories: ['国产剧', '香港剧', '韩国剧', '欧美剧', '台湾剧', '日本剧', '海外剧', '泰国剧', '短剧', '动作片', '喜剧片', '爱情片', '科幻片', '恐怖片', '剧情片', '战争片', '动漫片', '大陆综艺', '港台综艺', '日韩综艺', '欧美综艺', '国产动漫', '日韩动漫', '欧美动漫', '港台动漫', '海外动漫', '记录片'],                        
-            search: true, //搜索开关 true开 false关
-        }],
-        yingszj: [{
-            name: '鑫鑫影视',
-            url: 'http://yingszj.xn--654a.cc/api.php/app/',
-            // categories: ['国产剧', '香港剧', '韩国剧', '欧美剧', '台湾剧', '日本剧', '海外剧', '泰国剧', '短剧', '动作片', '喜剧片', '爱情片', '科幻片', '恐怖片', '剧情片', '战争片', '动漫片', '大陆综艺', '港台综艺', '日韩综艺', '欧美综艺', '国产动漫', '日韩动漫', '欧美动漫', '港台动漫', '海外动漫', '记录片'],                        
-            search: true, //搜索开关 true开 false关
-        }],
-        ttmja: [{
-            name: '天天美剧',
-            url: 'https://www.ttmja.com/api.php/app/',
-            // categories: ['国产剧', '香港剧', '韩国剧', '欧美剧', '台湾剧', '日本剧', '海外剧', '泰国剧', '短剧', '动作片', '喜剧片', '爱情片', '科幻片', '恐怖片', '剧情片', '战争片', '动漫片', '大陆综艺', '港台综艺', '日韩综艺', '欧美综艺', '国产动漫', '日韩动漫', '欧美动漫', '港台动漫', '海外动漫', '记录片'],                        
-            search: true, //搜索开关 true开 false关
-        }],
-        netfly: [{
-            name: '奈飞',
-            url: 'https://www.netfly.tv/api.php/app/',
-            // categories: ['国产剧', '香港剧', '韩国剧', '欧美剧', '台湾剧', '日本剧', '海外剧', '泰国剧', '短剧', '动作片', '喜剧片', '爱情片', '科幻片', '恐怖片', '剧情片', '战争片', '动漫片', '大陆综艺', '港台综艺', '日韩综艺', '欧美综艺', '国产动漫', '日韩动漫', '欧美动漫', '港台动漫', '海外动漫', '记录片'],                        
-            search: true, //搜索开关 true开 false关
-        }]
-    },
+  appys: {
+    futv: [{
+      name: "腐宅影视",
+      url: "http://app.zhaifutvapp.com/ruifenglb_api.php/v1.vod",
+      // categories: ['国产剧', '香港剧', '韩国剧', '欧美剧', '台湾剧', '日本剧', '海外剧', '泰国剧', '短剧', '动作片', '喜剧片', '爱情片', '科幻片', '恐怖片', '剧情片', '战争片', '动漫片', '大陆综艺', '港台综艺', '日韩综艺', '欧美综艺', '国产动漫', '日韩动漫', '欧美动漫', '港台动漫', '海外动漫', '记录片'],                        
+      search: true
+      //搜索开关 true开 false关
+    }],
+    yingszj: [{
+      name: "鑫鑫影视",
+      url: "http://yingszj.xn--654a.cc/api.php/app/",
+      // categories: ['国产剧', '香港剧', '韩国剧', '欧美剧', '台湾剧', '日本剧', '海外剧', '泰国剧', '短剧', '动作片', '喜剧片', '爱情片', '科幻片', '恐怖片', '剧情片', '战争片', '动漫片', '大陆综艺', '港台综艺', '日韩综艺', '欧美综艺', '国产动漫', '日韩动漫', '欧美动漫', '港台动漫', '海外动漫', '记录片'],                        
+      search: true
+      //搜索开关 true开 false关
+    }],
+    ttmja: [{
+      name: "天天美剧",
+      url: "https://www.ttmja.com/api.php/app/",
+      // categories: ['国产剧', '香港剧', '韩国剧', '欧美剧', '台湾剧', '日本剧', '海外剧', '泰国剧', '短剧', '动作片', '喜剧片', '爱情片', '科幻片', '恐怖片', '剧情片', '战争片', '动漫片', '大陆综艺', '港台综艺', '日韩综艺', '欧美综艺', '国产动漫', '日韩动漫', '欧美动漫', '港台动漫', '海外动漫', '记录片'],                        
+      search: true
+      //搜索开关 true开 false关
+    }],
+    mjlnl: [{
+      name: "聚焦",
+      url: "https://www.mjlnl.cn/api.php/v1.vod",
+      // categories: ['国产剧', '香港剧', '韩国剧', '欧美剧', '台湾剧', '日本剧', '海外剧', '泰国剧', '短剧', '动作片', '喜剧片', '爱情片', '科幻片', '恐怖片', '剧情片', '战争片', '动漫片', '大陆综艺', '港台综艺', '日韩综艺', '欧美综艺', '国产动漫', '日韩动漫', '欧美动漫', '港台动漫', '海外动漫', '记录片'],                        
+      search: true
+      //搜索开关 true开 false关
+    }],
+    netfly: [{
+      name: "奈飞",
+      url: "https://www.netfly.tv/api.php/app/",
+      // categories: ['国产剧', '香港剧', '韩国剧', '欧美剧', '台湾剧', '日本剧', '海外剧', '泰国剧', '短剧', '动作片', '喜剧片', '爱情片', '科幻片', '恐怖片', '剧情片', '战争片', '动漫片', '大陆综艺', '港台综艺', '日韩综艺', '欧美综艺', '国产动漫', '日韩动漫', '欧美动漫', '港台动漫', '海外动漫', '记录片'],                        
+      search: true
+      //搜索开关 true开 false关
+    }]
+  },
     avm3u8: {
         md1m3u8: [{
             name: "麻豆①",
@@ -366,16 +372,124 @@ export default {
             search: true
         }]
     },
-    alist: [
-        {
-            name: '🐉神族九帝',
-            server: 'https://alist.shenzjd.com',
-        },
-        {
-            name: '💢repl',
-            server: 'https://ali.liucn.repl.co',
-        },
-    ],
+  alist: [
+    {
+      "name": "🟢 合集",
+      "server": "http://www.jczyl.top:5244/"
+    },
+    {
+      "name": "🟢 东哥",
+      "server": "http://101.34.67.237:5244/"
+    },
+    {
+      "name": "🟢 美云",
+      "server": "https://h.dfjx.ltd/"
+    },
+    {
+      "name": "🟢 小新",
+      "server": "https://pan.cdnxin.top/"
+    },
+    {
+      "name": "🟢 白云",
+      "server": "http://breadmyth.asuscomm.com:22222/"
+    },
+    {
+      "name": "🟢 小鸭",
+      "server": "http://www.214728327.xyz:5201/"
+    },
+    {
+      "name": "🟢 瑶瑶",
+      "server": "https://lyly.run.goorm.io/"
+    },
+    {
+      "name": "🟢 潇洒",
+      "server": "https://alist.azad.asia/"
+    },
+    {
+      "name": "🟢 鹏程",
+      "server": "https://pan.pengcheng.team/"
+    },
+    {
+      "name": "🟢 浅唱",
+      "server": "http://vtok.pp.ua/"
+    },
+    {
+      "name": "🟢 小丫",
+      "server": "http://alist.xiaoya.pro/"
+    },
+    {
+      "name": "🟢 触光",
+      "server": "https://pan.ichuguang.com"
+    },
+    {
+      "name": "🟢 弱水",
+      "server": "http://shicheng.wang:555/"
+    },
+    {
+      "name": "🟢 神器",
+      "server": "https://alist.ygxz.xyz/"
+    },
+    {
+      "name": "🟢 资源",
+      "server": "https://pan.ecve.cn/"
+    },
+    {
+      "name": "🟢 雨呢",
+      "server": "https://pan.clun.top/"
+    },
+    {
+      "name": "🟢 oeio",
+      "server": "https://o.oeio.repl.co/"
+    },
+    {
+      "name": "🟢 悦享",
+      "server": "https://nics.eu.org/"
+    },
+    {
+      "name": "🟢 分享",
+      "server": "https://ofoo.ml/"
+    },
+    {
+      "name": "🟢 PRO",
+      "server": "https://alist.prpr.run/"
+    },
+    {
+      "name": "🟢 多多",
+      "server": "https://pan.xwbeta.com"
+    },
+    {
+      "name": "🟢 小陈",
+      "server": "https://ypan.cc/"
+    },
+    {
+      "name": "🟢 只鱼",
+      "server": "https://alist.youte.ml"
+    },
+    {
+      "name": "🟢 七米",
+      "server": "https://al.chirmyram.com"
+    },
+    {
+      "name": "🟢 九帝",
+      "server": "https://alist.shenzjd.com"
+    },
+    {
+      "name": "🟢 白雪",
+      "server": "https://pan.jlbx.xyz"
+    },
+    {
+      "name": "🟢 星梦",
+      "server": "https://pan.bashroot.top"
+    },
+    {
+      "name": "🟢 repl",
+      "server": "https://ali.liucn.repl.co"
+    },
+    {
+      "name": "🟢 讯维",
+      "server": "https://pan.xwbeta.com"
+    }
+  ],
     color: [
         {
             light: {
