@@ -25,8 +25,9 @@ import tewx from './spider/book/tewx.js';
 import copymanga from './spider/book/copymanga.js';
 import hm from './spider/book/韩漫基地.js';
 import mhdq from './spider/book/mhdq.js';
+import alist from './spider/pan/alist.js';
 
-const spiders = [pk_push,douban,live,aiyingshi,xinshijue,nongmin,czzy,saohuo,appys,vcm3u8,sharenice,ktv,avlive,maiyoux,avm3u8,_13bqg,bookan,ts230,bengou,laobaigs,coco,baozi,tewx,copymanga,hm,mhdq];
+const spiders = [pk_push,douban,live,aiyingshi,xinshijue,nongmin,czzy,saohuo,appys,vcm3u8,sharenice,ktv,avlive,maiyoux,avm3u8,_13bqg,bookan,ts230,bengou,laobaigs,coco,baozi,tewx,copymanga,hm,mhdq,alist];
 /*
 const spiders = [douban,nongmin,appys,vcm3u8,live,cntv,saohuo,tudou,kkys,czzy,ikanbot,sharenice,ktv,ttkx,meijumi,yingso,_13bqg,bookan,bengou,laobaigs,coco,copymanga];
 */
