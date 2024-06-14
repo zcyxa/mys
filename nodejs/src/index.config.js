@@ -1,4 +1,7 @@
 export default {
+czzy: {
+        url: 'https://www.czys.top/'
+    },
 live: {
         contents: 'https://gitee.com/galnt/cctv/raw/master/contents.txt', // 按省区分的目录,供参考,可以不添加
         url: [
