@@ -97,7 +97,7 @@ avlive: {
         url: [
            { name: "性视界", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/zblive/main/YG.txt" , index: "true" }, 
            { name: "玩偶", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/zblive/main/hongkongdoll.txt" , index: "true" }, 
-           { name: "传媒仓库", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/zblive/main/hsck.txt" , index: "true" },       
+           { name: "传媒仓库", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/zblive/main/hsck.txt" , index: "true" },         
            { name: "三级", "url":"https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/zblive/main/idol.txt", index: "true" },
            { name: "刘玥", "url":"https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/zblive/main/juneliu.txt", index: "true" }, 
            { name: "小姐姐", "url":"https://mirror.ghproxy.com/https://raw.githubusercontent.com/lndsqhj/zblive/main/madou.txt", index: "true" },
@@ -107,13 +107,13 @@ avlive: {
 avm3u8: {
         md1m3u8: [{
             name: "麻豆①",
-            url: "http://www.md91.cc/api.php/provide/vod/from/m3u8/",
+            url: "http://www.9191md.me/api.php/provide/vod/",   
             search: true
             }],
 
         md3m3u8: [{
             name: "麻豆②",
-            url: "http://86876.cc/api.php/provide/vod/from/mdm3u8/",
+            url: "http://86876.cc/api.php/provide/vod/from/mdm3u8/", 
             search: true
             }],
 
