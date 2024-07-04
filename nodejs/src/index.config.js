@@ -5,7 +5,7 @@ czzy: {
 live: {
         contents: 'https://gitee.com/galnt/cctv/raw/master/contents.txt', // 按省区分的目录,供参考,可以不添加
         url: [
-            {name: 'ITV ', url: 'https://tv.smcq.fun/bg/itvlist.txt'}
+            {name: 'ITV ', url: 'https://10518590.xyz/bg/itvlist.txt'} 
         ]
     },
 vcm3u8: {
