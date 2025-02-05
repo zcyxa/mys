@@ -19,7 +19,7 @@ class XinshijueSpider extends NodeJSSpider {
         this.siteUrl = 'https://www.hdmyy.com';
     }
 
-    getName() { return "🟢 视觉影视" }
+    getName() { return "视觉影视" }
 
     getAppName() { return "视觉影视" }
 
