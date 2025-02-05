@@ -15,16 +15,6 @@ import avlive from './spider/video/avlive.js';
 import maiyoux from './spider/video/maiyoux_node.js';
 import avm3u8 from './spider/video/avm3u8.js';
 import _13bqg from './spider/book/13bqg.js';
-import bookan from './spider/book/bookan.js';
-import ts230 from './spider/book/230ts.js';
-import bengou from './spider/book/bengou.js';
-import laobaigs from './spider/book/laobaigs.js';
-import coco from './spider/book/coco.js';
-import baozi from './spider/book/baozi.js';
-import tewx from './spider/book/tewx.js';
-import copymanga from './spider/book/copymanga.js';
-import hm from './spider/book/韩漫基地.js';
-import mhdq from './spider/book/mhdq.js';
 import alist from './spider/pan/alist.js';
 
 const spiders = [pk_push,douban,live,aiyingshi,xinshijue,nongmin,czzy,saohuo,appys,vcm3u8,sharenice,ktv,avlive,maiyoux,avm3u8,_13bqg,bookan,ts230,bengou,laobaigs,coco,baozi,tewx,copymanga,hm,mhdq,alist];
