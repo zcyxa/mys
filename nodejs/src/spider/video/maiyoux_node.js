@@ -152,7 +152,7 @@ async function test(inReq, outResp) {
 export default {
     meta: {
         key: 'maiyoux',
-        name: '🔞 聚合直播',
+        name: '聚合直播',
         type: 3,
     },
     api: async (fastify) => {
