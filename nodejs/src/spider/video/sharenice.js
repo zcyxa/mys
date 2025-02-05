@@ -178,7 +178,7 @@ async function test(inReq, outResp) {
 export default {
     meta: {
         key: 'sharenice',
-        name: '🟢 短视频',
+        name: '短视频',
         type: 3,
     },
    api: async (fastify) => {
