@@ -544,7 +544,7 @@ async function test(inReq, outResp) {
 export default {
     meta: {
         key: 'nongmin',
-        name: '🟢 农民影视',
+        name: '农民影视',
         type: 3,
     },
     api: async(fastify) => {
