@@ -926,7 +926,7 @@ async function test(inReq, outResp) {
 export default {
     meta: {
         key: 'appys',
-        name: '🟢 APP影视',
+        name: 'APP影视',
         type: 3,
     },
     api: async (fastify) => {
