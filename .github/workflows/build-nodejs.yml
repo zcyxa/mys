@@ -9,17 +9,26 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
+    - name: Cache npm dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
     - uses: actions/setup-node@v3
       with:
-        node-version: 18.17.1
-        
-    - name: Run npm bild
+        node-version: latest
+
+    - name: Run npm build
       working-directory: nodejs
       run: |
         npm i
         npm i lodash
         npm run build
-        
+
     - name: Archive dist
       uses: actions/upload-artifact@v4
       with:
