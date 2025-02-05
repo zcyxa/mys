@@ -404,7 +404,7 @@ async function test(inReq, outResp) {
 export default {
   meta: {
       key: 'saohuo',
-      name: '🟢 骚火影视',
+      name: '骚火影视',
       type: 3,
   },
   api: async (fastify) => {
